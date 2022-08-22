@@ -57,11 +57,11 @@ footer {
 }
 @font-face {
     font-family: "Montserrat";
-    font-weight: 300;
+    font-weight: light;
     src: url("fonts/Montserrat-Light.ttf");
 }
 @font-face {
     font-family: "Montserrat";
-    font-weight: 500;
+    font-weight: bold;
     src: url("fonts/Montserrat-Medium.ttf");
 }
