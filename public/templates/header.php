@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 
-<body class="wrapper">
+<body>
     <nav class=" navbar navbar-expand-lg bg-main text-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
@@ -42,4 +42,4 @@
         </div>
     </nav>
     <!-- todo main block height to maximum -->
-    <main>
+    <main class="wrapper">

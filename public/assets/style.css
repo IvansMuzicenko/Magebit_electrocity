@@ -1,5 +1,5 @@
 @import "./styles/auth.css";
-/*@import "./styles/catalogue-item.css";*/
+@import "./styles/catalogue-item.css";
 /*@import "./styles/catalogue.css";*/
 /*@import "./styles/index.css";*/
 /*@import "./styles/profile.css";*/
@@ -16,6 +16,9 @@ body {
 }
 body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .wrapper {
     width: 100vw;
