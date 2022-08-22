@@ -6,10 +6,17 @@ html,
 body {
     margin: 0;
     padding: 0;
+    background: #edf2ff;
 }
 .wrapper {
     width: 100vw;
     padding: 0 10%;
+}
+.bg-primary {
+    background: #edf2ff;
+}
+.bg-secondary {
+    background: #dbe4ff;
 }
 
 @font-face {
