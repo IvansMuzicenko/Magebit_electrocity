@@ -10,10 +10,10 @@ require_once "./templates/header.php"
                 <img src="https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg" class="d-block" style=" object-fit:contain;" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://images.1a.lv/display/aikido/store/d0c195dba74d40b9ca74217ef16b1dae.jpg?h=742&w=816" class="d-block" style=" object-fit: contain;" alt="...">
+                <img src="https://images.1a.lv/display/aikido/store/d0c195dba74d40b9ca74217ef16b1dae.jpg?h=742&w=816" class="d-block" style=" object-fit: cover;" alt="...">
             </div>
             <div class="carousel-item ">
-                <img src="https://images.1a.lv/display/aikido/store/b9c609996e2660635b608e2c2032850c.jpg?h=742&w=816" class="d-block" style=" object-fit: contain;" alt="...">
+                <img src="https://images.1a.lv/display/aikido/store/b9c609996e2660635b608e2c2032850c.jpg?h=742&w=816" class="d-block" style=" object-fit: cover;" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
