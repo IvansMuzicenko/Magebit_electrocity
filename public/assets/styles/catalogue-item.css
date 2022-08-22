@@ -1,0 +1,13 @@
+.carousel-item > img {
+    width: 500px;
+    height: 500px;
+    background: #fff;
+}
+
+th {
+    font-weight: 500;
+}
+
+button {
+    background: #000;
+}
