@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/catalogue', function () {
     return view('catalogue');
 });
-Route::get('/catalogue/{id}}', function () {
+Route::get('/catalogue/{id}', function () {
     return view('catalogue-item');
 });
 Route::get('/cart', function () {
