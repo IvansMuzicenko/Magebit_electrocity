@@ -3,6 +3,10 @@
     border-radius: 20px;
 }
 
+.reg-container-main {
+    width: 366px;
+}
+
 #signUpLink,
 #signInLink {
     color: blue;

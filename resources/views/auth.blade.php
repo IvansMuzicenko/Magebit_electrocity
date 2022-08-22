@@ -25,34 +25,33 @@ require_once "./templates/header.php"
 
   <form class="signUp bg-secondary p-3 align-items-center visually-hidden ">
     <h2 class="d-flex justify-content-center mb-5">User registration</h2>
-    <div class="reg-container-main d-flex gap-3">
-      <div class="reg-container-1">
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="reg-name" placeholder="Jurijs" />
-          <label for="floatingInput">Your name</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="reg-surname" placeholder="Baranovskis" />
-          <label for="floatingInput">Your surname</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="reg-email" placeholder="name@example.com" />
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="reg-pw-1" placeholder="Password" />
-          <label for="floatingPassword">Password</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="reg-pw-2" placeholder="Password" />
-          <label for="floatingPassword">Repeat password</label>
-        </div>
+    <div class="reg-container-main d-flex flex-column gap-3">
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="reg-name" placeholder="Jurijs" />
+        <label for="floatingInput">Your name</label>
       </div>
-      <div class="reg-container-2 ">
-        <div class="form-floating">
-          <input class="form-control" placeholder="Street, city, zip-code" id="floatingTextarea2" style="height: 250px"></input>
-          <label for="floatingTextarea2">Street, city, zip-code</label>
-        </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="reg-surname" placeholder="Baranovskis" />
+        <label for="floatingInput">Your surname</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="reg-email" placeholder="name@example.com" />
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="reg-pw-1" placeholder="Password" />
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="reg-pw-2" placeholder="Password" />
+        <label for="floatingPassword">Repeat password</label>
+      </div>
+
+      <div class="form-floating">
+        <input class="form-control" placeholder="Street, city, zip-code" id="floatingTextarea2"></input>
+        <label for=" floatingTextarea2">Street, city, zip-code</label>
+
       </div>
     </div>
     <div class="d-flex justify-content-center mb-5 mt-5">
