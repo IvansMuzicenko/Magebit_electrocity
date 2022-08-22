@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-main text-white">
+<body class="wrapper">
+    <nav class=" navbar navbar-expand-lg bg-main text-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -41,4 +41,5 @@
             </ul>
         </div>
     </nav>
-    <main class="wrapper">
+    <!-- todo main block height to maximum -->
+    <main>
