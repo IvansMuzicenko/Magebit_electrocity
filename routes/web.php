@@ -22,6 +22,9 @@ Route::get('/catalogue', function () {
 Route::get('/catalogue/{id}}', function () {
     return view('catalogue-item');
 });
+Route::get('/cart', function () {
+    return view('cart');
+});
 Route::get('/profile', function () {
     return view('profile');
 });
