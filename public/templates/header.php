@@ -10,7 +10,7 @@
 </head>
 
 <body class="wrapper">
-    <nav class="navbar navbar-expand-lg bg-main text-white fixed-top">
+    <nav class="navbar navbar-expand-lg bg-main text-white sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
