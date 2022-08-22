@@ -11,3 +11,6 @@ th {
 button {
     background: #000;
 }
+#carouselExampleControls:hover button span {
+    color: black;
+}
