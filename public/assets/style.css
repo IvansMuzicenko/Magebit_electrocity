@@ -26,3 +26,5 @@ body {
     font-weight: 500;
     src: url("fonts/Montserrat-Medium.ttf");
 }
+
+@import "./styles/example.css";
