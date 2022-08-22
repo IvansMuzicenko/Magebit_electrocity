@@ -1,4 +1,9 @@
-@import "./styles/example.css";
+@import "./styles/auth.css";
+@import "./styles/catalogue-item.css";
+@import "./styles/catalogue.css";
+@import "./styles/index.css";
+@import "./styles/profile.css";
+@import "./styles/cart.css";
 * {
     font-family: "Montserrat";
     font-weight: 400;
@@ -35,6 +40,7 @@ body {
 .btn:focus {
     background: #37b24d;
     color: white;
+    border: none;
 }
 @font-face {
     font-family: "Montserrat";
