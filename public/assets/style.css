@@ -1,3 +1,4 @@
+@import "./styles/example.css";
 * {
     font-family: "Montserrat";
     font-weight: 400;
@@ -13,12 +14,21 @@ body {
     padding: 0 10%;
 }
 .bg-primary {
-    background: #edf2ff;
+    background: #edf2ff !important;
 }
 .bg-secondary {
-    background: #dbe4ff;
+    background: #dbe4ff !important;
 }
-
+.btn {
+    background: #51cf66;
+    color: white;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background: #37b24d;
+    color: white;
+}
 @font-face {
     font-family: "Montserrat";
     src: url("fonts/Montserrat-Regular.ttf");
@@ -33,5 +43,3 @@ body {
     font-weight: 500;
     src: url("fonts/Montserrat-Medium.ttf");
 }
-
-@import "./styles/example.css";
