@@ -1,7 +1,7 @@
 @import "./styles/auth.css";
 @import "./styles/catalogue-item.css";
 /*@import "./styles/catalogue.css";*/
-/*@import "./styles/index.css";*/
+@import "./styles/index.css";
 /*@import "./styles/profile.css";*/
 @import "./styles/cart.css";
 * {
