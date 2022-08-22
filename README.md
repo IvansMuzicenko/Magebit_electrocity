@@ -18,7 +18,7 @@ Background - Ghost White - #EDF2FF
         darker shade: #dbe4ff
 
 Button (green) - Emerald - #51CF66
-        darker shade: #40c057  
+        darker shade: #37b24d  
 
 Main Color - Royal Blue Light - #3B5BDB
 Secondary - Majorelle blue -  #7048E8
