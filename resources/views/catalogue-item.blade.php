@@ -1,5 +1,5 @@
 <?php
-include "./templates/header.php"
+require_once "./templates/header.php"
 ?>
 
 
@@ -7,5 +7,5 @@ include "./templates/header.php"
 
 
 <?php
-include "./templates/footer.php"
+require_once "./templates/footer.php"
 ?>
