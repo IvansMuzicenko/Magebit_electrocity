@@ -19,9 +19,16 @@ body {
 .bg-secondary {
     background: #dbe4ff !important;
 }
+.bg-main {
+    background: #3b5bdb;
+}
+.navbar * {
+    color: white !important;
+}
 .btn {
     background: #51cf66;
     color: white;
+    border: none;
 }
 .btn:hover,
 .btn:active,
