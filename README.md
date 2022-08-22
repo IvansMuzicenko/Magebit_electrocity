@@ -11,18 +11,6 @@ bootstrap - https://getbootstrap.com/docs/5.2/getting-started/introduction/ <br>
 TYPOGRAPHY
 
 Font: Montseratt
-
-Colors:
-
-Background - Ghost White - #EDF2FF
-        darker shade: #dbe4ff
-
-Button (green) - Emerald - #51CF66
-        darker shade: #37b24d  
-
-Main Color - Royal Blue Light - #3B5BDB
-Secondary - Majorelle blue -  #7048E8
-
 - Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
@@ -44,3 +32,16 @@ Paragraph default: 1.6
 - Letter spacing
 -0.5px
 0.75px
+
+Colors:
+
+Background - Ghost White - #EDF2FF
+        darker shade: #dbe4ff
+
+Button (green) - Emerald - #51CF66
+        darker shade: #37b24d  
+
+Main Color - Royal Blue Light - #3B5BDB
+Secondary - Majorelle blue -  #7048E8
+
+
