@@ -12,9 +12,8 @@
 <body>
     <nav class=" navbar navbar-expand-lg bg-main text-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                Electrocity
+            <a class="navbar-brand p-0 d-flex align-center" href="/">
+                <img src="../assets/images/logo.svg" alt="" width="" height="40" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
