@@ -4,8 +4,8 @@ require_once "./templates/header.php"
 
 <!--SIGN IN-->
 
-<div class="container d-flex justify-content-around mt-5">
-  <div class="signIn bg-secondary p-3 visually-hidden">
+<div class="container d-flex justify-content-around mt-5 align-items-center">
+  <div id="sign-in-table" class="signIn bg-secondary p-3 ">
     <h2 class="d-flex justify-content-center mb-5">User Login</h2>
     <div class="form-floating mb-3">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
@@ -18,12 +18,12 @@ require_once "./templates/header.php"
     <div class="d-flex justify-content-center mb-3">
       <button type="submit" class="btn btn-primary btn-lg">Log-in</button>
     </div>
-    <p>Don't have an account? <a href="">Sign-up!</a></p>
+    <p>Don't have an account? <button id="signUpLink">Sign-up!</button></p>
   </div>
 
   <!--SIGN UP-->
 
-  <form class="signUp bg-secondary p-3 ">
+  <form class="signUp bg-secondary p-3 align-items-center visually-hidden ">
     <h2 class="d-flex justify-content-center mb-5">User registration</h2>
     <div class="reg-container-main d-flex gap-3">
       <div class="reg-container-1">
@@ -58,7 +58,7 @@ require_once "./templates/header.php"
     <div class="d-flex justify-content-center mb-5 mt-5">
       <button type="submit" class="btn btn-primary btn-lg">Register</button>
     </div>
-    <p class="d-flex justify-content-center mb-3 ">Already have an account? <a href="">Log-in</a></p>
+    <p class="d-flex justify-content-center mb-3 ">Already have an account? <button id="signInLink">Log-in</button></p>
   </form>
 </div>
 
