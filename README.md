@@ -33,7 +33,7 @@ Paragraph default: 1.6
 -0.5px
 0.75px
 
-Colors:
+COLORS:
 
 Background - Ghost White - #EDF2FF
         darker shade: #dbe4ff
