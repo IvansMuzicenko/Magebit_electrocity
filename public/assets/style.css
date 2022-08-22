@@ -14,9 +14,15 @@ body {
     padding: 0;
     background: #edf2ff;
 }
+body {
+    min-height: 100vh;
+}
 .wrapper {
     width: 100vw;
     padding: 0 10%;
+}
+footer {
+    margin: 0 !important;
 }
 .bg-primary {
     background: #edf2ff !important;
