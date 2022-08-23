@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
+        //Mouses ----------------------------------------
         $mouseBrand = [
             "Logitech",
             "Logitech",
@@ -112,6 +113,7 @@ class DatabaseSeeder extends Seeder {
             "https://images.1a.lv/display/aikido/store/6d6eb337cfa2f289796ba2b25efea57b.jpg?h=742&w=816",
         ];
 
+        //Keyboards ----------------------------------------
         $keyboardBrand = [
             "Razer",
             "Razer",
@@ -177,6 +179,7 @@ class DatabaseSeeder extends Seeder {
             "https://http2.mlstatic.com/D_NQ_NP_852820-MLA49004181665_022022-O.webp",
         ];
 
+        //Headsets ----------------------------------------
         $headsetBrand = [
             "Logitech",
             "Corsair",
