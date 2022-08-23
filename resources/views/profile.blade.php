@@ -5,7 +5,7 @@ require_once "./templates/header.php"
 
 <div id="profile" class="container m-auto bg-secondary p-3 align-items-center rounded">
     <!-- PROFILE -->
-    <p class="h1 text-center mb-2">Profile:</p>
+    <p class="h1 text-center mb-2">Profile</p>
     <table class="table text-center ">
         <tr class="row m-auto">
             <th class="col table-light fw-light">Name:</th>
