@@ -45,7 +45,7 @@ require_once "./templates/header.php";
 
 <!-- CATALOGUE -->
 
-<div class="d-flex justify-content-center mt-5">
+<div id="cardsIndexCatalogue" class="d-flex justify-content-center mt-5">
   <h3>Catalogue</h3>
 </div>
 <div class="catalogue row m-0 d-flex justify-content-center gap-2 mb-5 pb-2">
