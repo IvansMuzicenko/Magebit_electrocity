@@ -4,7 +4,7 @@ require_once "./templates/header.php"
 
 <!--SIGN IN-->
 
-<div class="container d-flex justify-content-around mt-5 align-items-center">
+<div class="container d-flex justify-content-around mt-5 mb-5 align-items-center">
   <div id="sign-in-table" class="signIn bg-secondary p-3 ">
     <h2 class="d-flex justify-content-center mb-5">User Login</h2>
     <div class="form-floating mb-3">
