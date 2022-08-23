@@ -157,6 +157,7 @@ const winCheck = function () {
     if (winner > 0) {
         results.innerText = "Winner is player " + winner;
         player = 0;
+        available_cells = [];
         for (let value of winComb) {
             fields[value].classList.add("comb");
         }
