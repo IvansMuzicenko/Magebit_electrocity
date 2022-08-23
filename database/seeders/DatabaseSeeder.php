@@ -7,14 +7,16 @@ use Illuminate\Database\Seeder;
 use App\Models\Products;
 use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder {
+class DatabaseSeeder extends Seeder
+{
     use WithoutModelEvents;
     /**
      * Seed the application's database.
      *
      * @return void
      */
-    public function run() {
+    public function run()
+    {
         //Mouses ----------------------------------------
         $mouseBrand = [
             "Logitech",
@@ -27,6 +29,14 @@ class DatabaseSeeder extends Seeder {
             "Steelseries",
             "DELL",
             "DELL",
+            "Razer",
+            "Razer",
+            "Razer",
+            "Razer",
+            "Razer",
+            "Logitech",
+            "Redragon",
+            "Redragon"
         ];
         $mouseModel = [
             "G203",
@@ -39,6 +49,14 @@ class DatabaseSeeder extends Seeder {
             "Rival 600",
             "545-BBDS",
             "610M",
+            "Viper Ultimate",
+            "Orochi",
+            "Basilisk v3",
+            "Deathadder v2",
+            "Naga",
+            "M705",
+            "Octopus",
+            "M908"
         ];
         $mouseColor = [
             "Blue",
@@ -51,6 +69,14 @@ class DatabaseSeeder extends Seeder {
             "Black",
             "Black",
             "White",
+            "Yellow",
+            "White",
+            "Black",
+            "Black",
+            "Black",
+            "Silver",
+            "Black",
+            "Black",
         ];
         $mouseConn = [
             "USB",
@@ -63,6 +89,15 @@ class DatabaseSeeder extends Seeder {
             "USB",
             "USB",
             "Wireless",
+            "Wireless",
+            "Wireless",
+            "USB",
+            "USB",
+            "USB",
+            "Wireless",
+            "USB",
+            "USB",
+
         ];
         $mousePrice = [
             "30,00",
@@ -75,6 +110,15 @@ class DatabaseSeeder extends Seeder {
             "80,00",
             "51,00",
             "83,00",
+            "204,00",
+            "77,95",
+            "72,00",
+            "64,00",
+            "87,00",
+            "35,00",
+            "23,96",
+            "32,24",
+
         ];
         $mouseImg1 = [
             "https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg",
@@ -87,6 +131,14 @@ class DatabaseSeeder extends Seeder {
             "https://images.1a.lv/display/aikido/store/da625b99cdd427c63cc68cc3ca97c004.png?h=742&w=816",
             "https://images.1a.lv/display/aikido/cache/3fee97bba408d2ca5fc2bd8d52609770.png?h=742&w=816",
             "https://images.1a.lv/display/aikido/store/338d932781c6dda7229eefeb17111c87.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/a63b94ca0efb1d62309e453839b520ca.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/026fb1934cb4b13ffecc5ad6989cf35a.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/2f335e697b0c7b5f7a61db4955735961.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/203f10b09f248b5c7177bd9c41833e89.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/4a2ed0dffebd57e40b55de6028c2d495.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/96b4284cfd128b9a7d4284a330831bc1.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/3f7c242f7b5964b2c82df2f4930f1c1a.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/60ee1fa024fce10b5a24a7e07f2affd2.jpg?h=742&w=816",
         ];
         $mouseImg2 = [
             "https://images.1a.lv/display/aikido/store/d0c195dba74d40b9ca74217ef16b1dae.jpg?h=742&w=816",
@@ -98,7 +150,15 @@ class DatabaseSeeder extends Seeder {
             "https://images.1a.lv/display/aikido/cache/d2fcb0e55841249ae3d14fe4e3951e42.jpeg?h=742&w=816",
             "https://images.1a.lv/display/aikido/store/86265d2408add57d8991ff8d56b3ce72.jpg?h=742&w=816",
             "https://d3d14bvuzxlv37.cloudfront.net/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/D/-/D-N-545-BBDS_mouse-alienware-aw320m-black-gallery-1.webp",
-            "https://images.1a.lv/display/aikido/store/b1aa5455e788d77f0e415e1ca9925d7a.jpg?h=742&w=816"
+            "https://images.1a.lv/display/aikido/store/b1aa5455e788d77f0e415e1ca9925d7a.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/01da92b490cd90de77e1f2167cbd4af5.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/28d39f7c2c4b0de2395b51ccce557f79.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/7f26a07841f9f4d44f6100c9ea8109a4.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/c1bdef26ed4acc7acd3d95d060941575.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/343b773bea59eebb47ce1d7e36d699fe.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/9afa4cbd429d26adcf2ca1f19f324076.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/c8c0c891c4167dc99d601d1ffdd31b9b.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/a08d52b6b72875721153a86bcb40ff3b.jpg?h=742&w=816",
         ];
         $mouseImg3 = [
             "https://images.1a.lv/display/aikido/store/b9c609996e2660635b608e2c2032850c.jpg?h=742&w=816",
@@ -111,6 +171,14 @@ class DatabaseSeeder extends Seeder {
             "https://images.1a.lv/display/aikido/store/da625b99cdd427c63cc68cc3ca97c004.png?h=742&w=816",
             "https://d3d14bvuzxlv37.cloudfront.net/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/D/-/D-N-545-BBDS_mouse-alienware-aw320m-black-gallery-3.webp",
             "https://images.1a.lv/display/aikido/store/6d6eb337cfa2f289796ba2b25efea57b.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/aa93592b9fe7416a8968d40540c6bee9.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/413ea26d4f4bfeb3794ca2bcd2aba8c6.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/5d995836ec4d195606dd1db63962b7b4.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/3285940eb569b00751559e7612ff674b.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/5077c1cab046c110ea01109c5e0d72a6.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/b82a99c229839fcaaa5504e609542a6f.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/d2be4b5cb55df7134d7dde58faea6e88.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/0c23b8c9b96ec2592d7d91a35741bb5a.jpg?h=742&w=816",
         ];
 
         //Keyboards ----------------------------------------
