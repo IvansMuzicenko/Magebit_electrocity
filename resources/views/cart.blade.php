@@ -5,7 +5,7 @@ require_once "./templates/header.php"
 <div id="cart" class="container m-auto bg-secondary p-3 align-items-center rounded">
     <p class="h1 text-center mb-2">Cart</p>
 
-    <div class="list-group d-flex m-auto">
+    <div id="cartList" class="list-group d-flex m-auto">
 
         <a href="catalogue/1" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" aria-current="true">
             <div id="cartItems" class="conatiner d-flex">
