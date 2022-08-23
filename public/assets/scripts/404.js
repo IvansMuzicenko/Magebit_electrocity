@@ -208,7 +208,7 @@ const botTurn = function () {
 fields.forEach((el, index) => {
     el.onclick = function (evt) {
         if (
-            !this.querySelector("p").innerText &&
+            !this.querySelector("p").textContent &&
             available_cells.includes(index)
         ) {
             if (player == 1) {
@@ -219,7 +219,7 @@ fields.forEach((el, index) => {
                 checkBotCombos();
             }
             this.querySelector("p").textContent = fill();
-            this.querySelector("p").innerText;
+            this.querySelector("p").textContent;
             if (index >= 10) {
                 available_cells.push(index - 10);
             }
