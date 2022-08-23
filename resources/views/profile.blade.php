@@ -29,7 +29,7 @@ require_once "./templates/header.php"
     <p class="h1 text-center m-5 mb-2">Purchases</p>
     <div class="list-group">
 
-        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" aria-current="true">
+        <a href="catalogue/1" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" aria-current="true">
             <div id="cartItems" class="conatiner d-flex">
                 <img id="cartImg" class="rounded" src="https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg" alt="">
                 <p id="cartText" class="fs-6 fw-bold">Logitech</p>
