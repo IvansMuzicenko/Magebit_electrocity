@@ -1,0 +1,20 @@
+#cartImg {
+    width: 50px;
+    height: 50px;
+}
+
+#cartText{
+    margin-left: 10px;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+.list-group-item {
+
+    align-items: center;
+}
+
+#status {
+
+    color: #7048E8;
+}
