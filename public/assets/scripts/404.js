@@ -18,8 +18,6 @@ const winCombs = [];
  *  xlimit - limit of horizontal iteration
  *  ylimit -  limit of vertical iteration
  * */
-
-
 const createCombs = function (stepDiff, start = 0) {
   let xlimit = 10;
   let ylimit = 10;
@@ -229,4 +227,3 @@ fields.forEach((el, index) => {
     }
   };
 });
-
