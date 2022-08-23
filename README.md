@@ -51,5 +51,5 @@ Secondary - Majorelle blue -  #7048E8
 
 db usage https://laravel.com/docs/9.x/eloquent#retrieving-or-creating-models
 
-for db create use terminal command: php artisan migrate
+for db create use terminal command: php artisan migrate <br>
 for db seeds creation use terminal command: php artisan migrate:fresh --seed (or php artisan db:seed --force   if seeds already exists)
