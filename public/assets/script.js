@@ -1,3 +1,4 @@
+import "./scripts/404.js";
 import "./scripts/auth.js";
 //import "./scripts/catalogue-item.js";
 //import "./scripts/catalogue.js";

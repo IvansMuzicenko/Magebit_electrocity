@@ -2,11 +2,11 @@
     width: 1000px;
 }
 
-.list-group{
+#cartList{
     width: 800px;
 }
 
-.list-group a{
+#cartList a{
    margin-bottom: 5px;
 }
 
