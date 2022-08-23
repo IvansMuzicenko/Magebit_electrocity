@@ -1,0 +1,16 @@
+#cart{
+    width: 1000px;
+}
+
+.list-group{
+    width: 800px;
+}
+
+.list-group a{
+   margin-bottom: 5px;
+}
+
+.btn {
+    text-transform: uppercase;
+}
+
