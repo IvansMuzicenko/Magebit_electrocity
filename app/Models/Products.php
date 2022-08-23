@@ -17,11 +17,15 @@ class Products extends Authenticatable {
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'desc',
-        'price',
         "type",
-        "img"
+        "brand",
+        "model",
+        "color",
+        "connection",
+        "price",
+        "img1",
+        "img2",
+        "img3",
     ];
 
     // /**
