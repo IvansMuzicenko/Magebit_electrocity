@@ -1,10 +1,6 @@
-.signIn,
-.signUp {
+.signIn .bg-secondary,
+.signUp .bg-secondary {
     border-radius: 20px;
-}
-
-.reg-container-main {
-    width: 366px;
 }
 
 #signUpLink,

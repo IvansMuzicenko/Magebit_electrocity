@@ -33,7 +33,7 @@ class AuthController extends BaseController {
         $address = $_POST['address'];
         $password =
             password_hash($_POST['password'], PASSWORD_DEFAULT);
-        Auth::create(["firstname" => $firstname, "lastname" => $lastname, "email" => $email, "address" => $address, "password" => $password]);
+        Auth::create(["firstname" => $firstname, "lastname" => $lastname, "email" => $email, "address" => $address, "password" => $password, `updated_at` => date("Y-m-d H:i:s"), `created_at` => date("Y-m-d H:i:s")]);
         return response()->json([
             "status" => true,
         ], 200);
@@ -44,8 +44,6 @@ class AuthController extends BaseController {
             password_hash($_POST['password'], PASSWORD_DEFAULT);
         $user = Auth::where("id", $id);
         if ($user->password == $password) {
-
-            // TODO Alex
         }
         Auth::create();
         return response()->json([

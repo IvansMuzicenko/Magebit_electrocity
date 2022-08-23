@@ -23,13 +23,15 @@ return new class extends Migration {
             $table->string('img2');
             $table->string('img3');
         });
-        Schema::create('auth', function (Blueprint $table) {
+        Schema::create('auths', function (Blueprint $table) {
             $table->id("id");
             $table->string('firstname');
             $table->string('lastname');
             $table->string('address');
             $table->string('email');
             $table->string('password');
+            $table->date('updated_at');
+            $table->date('created_at');
         });
     }
 
@@ -40,6 +42,7 @@ return new class extends Migration {
      */
     public function down() {
         Schema::dropIfExists('products');
+        Schema::dropIfExists('auths');
         Schema::dropIfExists('auth');
     }
 };

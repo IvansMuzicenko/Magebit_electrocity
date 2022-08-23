@@ -21,7 +21,9 @@ class Auth extends Authenticatable {
         'lastname',
         'address',
         "email",
-        "password"
+        "password",
+        "updated_at",
+        "created_at",
     ];
 
     // /**
