@@ -1,16 +1,17 @@
-.carousel-item > img {
+#productCard{
+    width: 100%;
+
+    display: flex;
+
+}
+
+#productCarousel{
+    width: 500px;
+    object-fit: cover;
+    margin:auto;
+}
+
+#productCarousel img {
     width: 500px;
     height: 500px;
-    background: #fff;
-}
-
-th {
-    font-weight: 500;
-}
-
-button {
-    background: #000;
-}
-#carouselExampleControls:hover button span {
-    color: black;
 }

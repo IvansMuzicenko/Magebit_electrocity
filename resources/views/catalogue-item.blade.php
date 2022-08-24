@@ -2,58 +2,43 @@
 require_once "./templates/header.php"
 ?>
 
-<div class="product-item-template">
-    <div id="productItem" class="container  d-flex bg-secondary rounded mt-5">
-        <div id="itemsCarousel" class="carousel carousel-dark  slide m-auto" data-bs-ride="carousel" style="width: 500px; height: 500px; background: #fff;">
-            <div class="carousel-inner ">
-                <div class="carousel-item active">
-                    <img src="" class="d-block img1" style=" object-fit:contain;" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="" class="d-block img2" style=" object-fit: contain;" alt="...">
-                </div>
-                <div class="carousel-item ">
-                    <img src="" class="d-block img3" style=" object-fit: contain;" alt="...">
-                </div>
+<div id="productCard" class="card d-flex">
+    <div id="productCarousel" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="img1 d-block" alt="...">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#itemsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#itemsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <div class="container">
-            <div class="display-3 text-center brand"></div>
-            <p class="text-uppercase text-center model"></p>
-            <div class="description text-center">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam. Ex non explicabo nam totam veniam, provident repellendus deserunt exercitationem doloribus? Quibusdam quia minus, possimus consequatur neque sequi tenetur maiores.
+            <div class="carousel-item">
+                <img src="..." class="img2 d-block" alt="...">
             </div>
-            <p class="fs-2 text-center mt-3 ">Price: <span class="fs-2 price"></span></p>
-
-            <table class="table table-hover table-striped text-center">
-                <tr class="row m-auto">
-                    <th class="col">Brand</th>
-                    <td class="col brand"></td>
-                </tr>
-                <tr class="row m-auto">
-                    <th class="col">Model</th>
-                    <td class="col model"></td>
-                </tr>
-                <tr class="row m-auto">
-                    <th class="col">Color</th>
-                    <td class="col color"></td>
-                </tr>
-                <tr class="row m-auto">
-                    <th class="col">Connection</th>
-                    <td class="col connection"></td>
-                </tr>
-            </table>
-            <div class="btn d-grid gap-2 col-6 mx-auto m-3">Add</div>
+            <div class="carousel-item">
+                <img src="..." class="img3 d-block" alt="...">
+            </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="card-body text-center">
+        <p class="card-title fs-2 fw-bold brand"></p>
+        <p class="card-title fs-4 fw-light model"></p>
+        <p class="card-text description"></p>
+        <h3 class="card-title"><span class="price"></span>€</h3>
+
+    </div>
+    <ul class="list-group list-group-flush text-center">
+        <li class="list-group-item">Brand: <span class="brand fw-bold"></span></li>
+        <li class="list-group-item">Model: <span class="model fw-bold"></span></li>
+        <li class="list-group-item">Color: <span class="color fw-bold"></span></li>
+        <li class="list-group-item">Connection type: <span class="connection fw-bold"></span></li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link addBtn">Add</a>
     </div>
 </div>
 
