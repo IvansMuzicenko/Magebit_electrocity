@@ -44,25 +44,30 @@ require_once "./templates/header.php"
 </div>
 
 
-
 <script>
-  const addBtn = document.querySelector("add-to-cart");
-  const amount = document.querySelector("amount");
-
-  //TODO
   const productId = location.pathname.split("/")[2];
-  let cart = localStorage.getItem("cart");
 
+  const addToCart = function(event, productId) {
+    if (localStorage.getItem("cart") == null) {
+      localStorage.setItem("cart", JSON.stringify({}));
+    }
+    const amount = document.querySelector(".amount").value;
 
+    let cart = JSON.parse(localStorage.getItem("cart"));
 
+    cart[productId] = cart[productId] ? Number(cart[productId]) + Number(amount) : Number(amount);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+  document.querySelector(".add-to-cart").onclick = () => addToCart(event, productId);
 
-  fetch("/api/getProductById/" + location.pathname.split("/")[2])
-    .then(async response => await response.json())
+  fetch("/api/getProductById/" + productId)
+    .then(async response =>
+      await response.json())
     .then((data) => {
-      console.log(data);
       if (!data.data.length) {
         location.pathname = "404"
       }
+
       document.querySelector(".img1").src = data.data[0].img1;
       document.querySelector(".img2").src = data.data[0].img2;
       document.querySelector(".img3").src = data.data[0].img3;
@@ -92,7 +97,7 @@ require_once "./templates/header.php"
     });
 </script>
 
-<script src="../../assets/script.js"></script>
+
 
 <?php
 require_once "./templates/footer.php"
