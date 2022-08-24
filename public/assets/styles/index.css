@@ -23,4 +23,17 @@
     background: rgb(0, 0, 0, 0.9);
 }
 
+.categorie img {
+    border-radius: 10px;
+    margin: 5px;
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    
+}
 
+.card {
+    color:#000;
+    text-decoration: none;
+}

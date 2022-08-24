@@ -4,7 +4,7 @@ require_once "./templates/header.php";
 
 <!-- BANNER -->
 
-<div id="carouselBanner"  class="carousel slide" data-bs-interval="3000"  data-bs-ride="carousel">
+<div id="carouselBanner" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
     <div id="carouselIndicator" class="carousel-indicators">
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -40,7 +40,7 @@ require_once "./templates/header.php";
 <div id="cardsIndexCatalogue" class="d-flex justify-content-center mt-5">
     <h3>Catalogue</h3>
 </div>
-<div class="catalogue-index row m-0 d-flex justify-content-center gap-2 mb-5 pb-2">
+<div class="catalogue-index row m-0 d-flex justify-content-center text-center gap-2 mb-5 pb-2">
 
     <a href="#" class="card catalogue-index-card-template" style="width: 18rem;">
         <div>
@@ -53,8 +53,22 @@ require_once "./templates/header.php";
     <div class="d-flex justify-content-center mt-5">
         <a href="catalogue" type="submit" class="btn btn-primary btn-lg mb-5 catalogue-btn">Catalogue</a>
     </div>
-
 </div>
+
+<div class="categorie">
+    <a href="catalogue?type=Mouse">
+        <img src="../assets/images/categorieMouses.svg"  alt="">
+    </a>
+    <a href="catalogue?filter_type=Keyboard">
+        <img src="../assets/images/categorieKeyboards.svg" alt="">
+    </a>
+    <a href="catalogue?filter_type=Headset">
+        <img src="../assets/images/categorieHeadsets.svg" alt="">
+    </a>
+</div>
+
+
+
 
 <script>
     fetch("api/getAllProducts")
@@ -70,13 +84,13 @@ require_once "./templates/header.php";
                 const newItem = document.createElement("a");
                 newItem.href = "catalogue/" + item.id;
                 newItem.classList.add("card");
-                newItem.style = "width: 18rem;";
+                newItem.style = "width: 20rem;";
                 newItem.innerHTML = catalogueItemTemplate.innerHTML;
                 newItem.querySelector("img").src = item.img1;
                 newItem.querySelector("img").style =
-                    "height: 200px; object-fit:contain;";
+                    "height:200px; object-fit:contain;";
                 newItem.querySelector(".card-text").textContent =
-                    item.brand + " " + item.model + " " + item.price;
+                    item.brand + " " + item.model + " " + "€" + item.price;
 
                 catalogueIndex.prepend(newItem);
                 if (i == 10) {
