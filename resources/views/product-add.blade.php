@@ -16,9 +16,9 @@ require_once "./templates/header.php"
 
     <select name="product_type" id="add-type" style="width: 15rem;" class="form-select">
       <option selected>Product type</option>
-      <option value="mouse">Mouse</option>
-      <option value="keyboard">Keyboard</option>
-      <option value="headset">Headset</option>
+      <option value="Mouse">Mouse</option>
+      <option value="Keyboard">Keyboard</option>
+      <option value="Headset">Headset</option>
     </select>
 
     <input type="text" name="product_brand" id="add-brand" style="width: 15rem;" class="form-control" placeholder="Brand name">
@@ -29,8 +29,8 @@ require_once "./templates/header.php"
 
     <select name="product_connection" id="add-connection" style="width: 15rem;" class="form-select">
       <option selected>Connection</option>
-      <option value="usb">USB</option>
-      <option value="wireless">Wireless</option>
+      <option value="Usb">USB</option>
+      <option value="Wireless">Wireless</option>
       <option value="3.5mm">3.5mm</option>
     </select>
 
@@ -45,7 +45,57 @@ require_once "./templates/header.php"
 </div>
 
 
+<script>
+  document.querySelector("form").onsubmit = function(event) {
+    event.preventDefault();
 
+    const type = document.querySelector(
+      "[name='product_type']"
+    ).value;
+    const brand = document.querySelector(
+      "[name='product_brand']"
+    ).value;
+    const model = document.querySelector(
+      "[name='product_model']"
+    ).value;
+    const color = document.querySelector(
+      "[name='product_color']"
+    ).value;
+    const connection = document.querySelector(
+      "[name='product_connection']"
+    ).value;
+    const price = document.querySelector(
+      "[name='product_price']"
+    ).value;
+    const img1 = document.querySelector(
+      "[name='product_img1']"
+    ).value;
+    const img2 = document.querySelector(
+      "[name='product_img2']"
+    ).value;
+    const img3 = document.querySelector(
+      "[name='product_img3']"
+    ).value;
+    const data = new FormData();
+    data.set("type", type);
+    data.set("brand", brand);
+    data.set("model", model);
+    data.set("color", color);
+    data.set("connection", connection);
+    data.set("price", price);
+    data.set("img1", img1);
+    data.set("img2", img2);
+    data.set("img3", img3);
+    fetch("api/addProduct", {
+      method: "POST",
+      body: data,
+    }).then(response => response.json()).then(data => {
+      if (data) {
+        location.pathname = "";
+      }
+    })
+  }
+</script>
 
 
 

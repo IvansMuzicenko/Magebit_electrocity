@@ -32,9 +32,28 @@ class ProductController extends BaseController {
             "data" => Products::where("id", $id)->get()
         ], 200);
     }
-    // public function add() {
-    //     return response()->json([
-    //         "status" => true,
-    //     ], 200);
-    // }
+    public function addProduct() {
+        $type = $_POST["type"];
+        $brand = $_POST["brand"];
+        $model = $_POST["model"];
+        $color = $_POST["color"];
+        $connection = $_POST["connection"];
+        $price = $_POST["price"];
+        $img1 = $_POST["img1"];
+        $img2 = $_POST["img2"];
+        $img3 = $_POST["img3"];
+
+        Products::create([
+            "type" => $type,
+            "brand" => $brand,
+            "model" => $model,
+            "color" => $color,
+            "connection" => $connection,
+            "price" => $price,
+            "img1" => $img1,
+            "img2" => $img2,
+            "img3" => $img3,
+        ]);
+        return true;
+    }
 }
