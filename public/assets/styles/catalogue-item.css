@@ -7,10 +7,13 @@
 
 #productCarousel{
     width: 500px;
-    object-fit: cover;
+    
     margin:auto;
 }
 
+#productCarousel img{
+    object-fit: contain;
+}
 #productCarousel img {
     width: 500px;
     height: 500px;
