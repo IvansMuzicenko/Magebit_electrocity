@@ -1,0 +1,22 @@
+.minus,
+.plus,
+.qty {
+    height: 2rem;
+}
+
+.qty {
+    width: 3rem;
+}
+
+.offcanvas-end {
+    width: 500px !important;
+}
+
+.cart-item-bg {
+    border-radius: 10px;
+}
+
+#cart-item-remove {
+    background-color: transparent;
+    border: none;
+}
