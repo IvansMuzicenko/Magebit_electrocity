@@ -8,13 +8,13 @@ require_once "./templates/header.php"
 	</div>
 
 	<form class="filter d-flex justify-content-center mt-1 pt-1 gap-2">
-		<select class="form-select filter_type" style="width: 10rem;" aria-label="Default select example">
+		<select class="form-select filter_select filter_type" style="width: 10rem;" aria-label="Default select example">
 			<option value="*" selected>Product type</option>
 			<option value="Mouse">Mouse</option>
 			<option value="Keyboard">Keyboard</option>
 			<option value="Headsets">Headsets</option>
 		</select>
-		<select class="form-select filter_brand" style="width: 10rem;" aria-label="Default select example">
+		<select class="form-select filter_select filter_brand" style="width: 10rem;" aria-label="Default select example">
 			<option value="*" selected>Brand</option>
 			<option value="Logitech">Logitech</option>
 			<option value="Steel Series">Steel Series</option>
@@ -23,19 +23,19 @@ require_once "./templates/header.php"
 			<option value="Corsair">Corsair</option>
 			<option value="Redragon">Redragon</option>
 		</select>
-		<select class="form-select filter_color" style="width: 10rem;" aria-label="Default select example">
+		<select class="form-select filter_select filter_color" style="width: 10rem;" aria-label="Default select example">
 			<option value="*" selected>Color</option>
 			<option value="Black">Black</option>
 			<option value="White">White</option>
 			<option value="Colored">Colored</option>
 		</select>
-		<select class="form-select filter_connection" style="width: 10rem;" aria-label="Default select example">
+		<select class="form-select filter_select filter_connection" style="width: 10rem;" aria-label="Default select example">
 			<option value="*" selected>Connection</option>
 			<option value="USB">USB</option>
 			<option value="Wireless">Wireless</option>
 			<option value="3.5mm">3.5mm</option>
 		</select>
-		<button type="submit" class="btn btn-primary btn-lg">Apply filter</button>
+		<button class="btn clear_filter">Clear filter</button>
 	</form>
 
 	<div class="catalogue row m-0 d-flex justify-content-center gap-2 mb-5 pb-2 pt-5 mt-3">
@@ -81,7 +81,7 @@ require_once "./templates/header.php"
 			displayItems(data.data)
 		});
 
-	document.querySelector(".filter").onsubmit = function(event) {
+	const filterFunction = function(event) {
 		event.preventDefault();
 
 		let data = new FormData();
@@ -96,10 +96,22 @@ require_once "./templates/header.php"
 		}).then(response => response.json()).then(data => {
 			displayItems(data.data);
 		})
-
-
-
 	}
+
+	document.querySelector(".clear_filter").onclick = function(event) {
+		event.preventDefault();
+		document.querySelector(".filter_type").value = "*";
+		document.querySelector(".filter_brand").value = "*";
+		document.querySelector(".filter_color").value = "*";
+		document.querySelector(".filter_connection").value = "*";
+		filterFunction(event);
+	}
+
+	document.querySelectorAll(".filter_select").forEach(select => {
+		select.onchange = filterFunction;
+	})
+
+	document.querySelector(".filter").onsubmit = (e) => e.preventDefault();
 </script>
 
 
