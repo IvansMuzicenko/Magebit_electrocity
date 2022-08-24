@@ -38,7 +38,7 @@ require_once "./templates/header.php"
         <li class="list-group-item">Connection type: <span class="connection fw-bold"></span></li>
     </ul>
     <div class="card-body d-flex justify-content-end">
-        <a href="#" id="add" class="card-link btn btn-primary btn-lg mb-5 catalogue-btn">Add</a>
+        <a href="#" id="add" class="card-link btn btn-primary btn-lg">Add</a>
     </div>
 </div>
 
