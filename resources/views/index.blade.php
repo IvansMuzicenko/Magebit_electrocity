@@ -4,43 +4,35 @@ require_once "./templates/header.php";
 
 <!-- BANNER -->
 
-<div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
-    <div id="carouselIndicator" class="carousel-indicators">
+<div id="carouselBanner"  class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselIndicator"  class="carousel-indicators">
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../assets/images/banner1.svg" class="d-block w-100" style="object-fit:cover" alt="...">
+            <img src="../assets/images/banner1.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
             <div id="textBg" class="carousel-caption d-none d-md-block">
                 <p class="h1 fw-light">Welcome to ELECTROCITY</p>
                 <p class="fs-5">Best online shop in Europe</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="../assets/images/banner2.svg" class="d-block w-100" style="object-fit:cover" alt="...">
+            <img src="../assets/images/banner2.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <p class="h1 fw-light">logitech x electroCity</p>
                 <p>Best devices by logitech</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="../assets/images/banner3.svg" class="d-block w-100" style="object-fit:cover" alt="...">
+            <img src="../assets/images/banner3.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <p class="h1 fw-light">razer x electroCity</p>
                 <p>"For gamers by gamers." devices can find in our e-shop</p>
             </div>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
 
 <!-- CATALOGUE -->
