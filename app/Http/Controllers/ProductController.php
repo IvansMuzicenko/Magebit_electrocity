@@ -26,6 +26,30 @@ class ProductController extends BaseController {
             "data" => Products::all()
         ], 200);
     }
+    public function getFilteredProducts() {
+        $type = $_POST["type"];
+        $brand = $_POST["brand"];
+        $color = $_POST["color"];
+        $connection = $_POST["connection"];
+        $filterArray = [];
+        if ($type != "*") {
+            array_push($filterArray, ["type", $type]);
+        }
+        if ($brand != "*") {
+            array_push($filterArray, ["brand", $brand]);
+        }
+        if ($color != "*") {
+            array_push($filterArray, ["color", $color]);
+        }
+        if ($connection != "*") {
+            array_push($filterArray, ["connection", $connection]);
+        }
+        $query = DB::table('products')->where($filterArray);
+        return response()->json([
+            "status" => true,
+            "data" => $query->get()
+        ], 200);
+    }
     public function getProductById($id) {
         return response()->json([
             "status" => true,

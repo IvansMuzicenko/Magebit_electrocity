@@ -23,6 +23,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get("getAllProducts", [ProductController::class, "getAllProducts"]);
 Route::get("getProductById/{id}", [ProductController::class, "getProductById"]);
+Route::post("getFilteredProducts", [ProductController::class, "getFilteredProducts"]);
 Route::post("addProduct", [ProductController::class, "addProduct"]);
 
 Route::post("auth/register", [AuthController::class, "register"]);
