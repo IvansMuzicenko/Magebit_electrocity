@@ -59,43 +59,16 @@ require_once "./templates/header.php";
   document.querySelector("form").onsubmit = function(event) {
     event.preventDefault();
 
-    const type = document.querySelector(
-      "[name='product_type']"
-    ).value;
-    const brand = document.querySelector(
-      "[name='product_brand']"
-    ).value;
-    const model = document.querySelector(
-      "[name='product_model']"
-    ).value;
-    const color = document.querySelector(
-      "[name='product_color']"
-    ).value;
-    const connection = document.querySelector(
-      "[name='product_connection']"
-    ).value;
-    const price = document.querySelector(
-      "[name='product_price']"
-    ).value;
-    const img1 = document.querySelector(
-      "[name='product_img1']"
-    ).value;
-    const img2 = document.querySelector(
-      "[name='product_img2']"
-    ).value;
-    const img3 = document.querySelector(
-      "[name='product_img3']"
-    ).value;
     const data = new FormData();
-    data.set("type", type);
-    data.set("brand", brand);
-    data.set("model", model);
-    data.set("color", color);
-    data.set("connection", connection);
-    data.set("price", price);
-    data.set("img1", img1);
-    data.set("img2", img2);
-    data.set("img3", img3);
+    data.set("type", document.querySelector("[name='product_type']").value);
+    data.set("brand", document.querySelector("[name='product_brand']").value);
+    data.set("model", document.querySelector("[name='product_model']").value);
+    data.set("color", document.querySelector("[name='product_color']").value);
+    data.set("connection", document.querySelector("[name='product_connection']").value);
+    data.set("price", document.querySelector("[name='product_price']").value);
+    data.set("img1", document.querySelector("[name='product_img1']").value);
+    data.set("img2", document.querySelector("[name='product_img2']").value);
+    data.set("img3", document.querySelector("[name='product_img3']").value);
     fetch("api/addProduct", {
       method: "POST",
       body: data,
