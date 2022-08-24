@@ -23,7 +23,7 @@ class AuthController extends BaseController {
     public function getAuthById($id) {
         return response()->json([
             "status" => true,
-            "data" => Auth::where("id", $id)
+            "data" => Auth::where("id", $id)->get()
         ], 200);
     }
     public function register() {
@@ -33,22 +33,24 @@ class AuthController extends BaseController {
         $address = $_POST['address'];
         $password =
             password_hash($_POST['password'], PASSWORD_DEFAULT);
-        Auth::create(["firstname" => $firstname, "lastname" => $lastname, "email" => $email, "address" => $address, "password" => $password, `updated_at` => date("Y-m-d H:i:s"), `created_at` => date("Y-m-d H:i:s")]);
-        return response()->json([
-            "status" => true,
-        ], 200);
+        $newUser =
+            Auth::create(["firstname" => $firstname, "lastname" => $lastname, "email" => $email, "address" => $address, "password" => $password, `updated_at` => date("Y-m-d H:i:s"), `created_at` => date("Y-m-d H:i:s")]);
+
+        $_SESSION["user"] = ["id" => $newUser->id, "firstname" => $firstname, "lastname" => $lastname, "email" => $email, "address" => $address,];
+        return true;
     }
-    public function login($id) {
+    public function login() {
         $email = $_POST['email'];
-        $password =
-            password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $user = Auth::where("id", $id);
-        if ($user->password == $password) {
+        $password = $_POST['password'];
+        $user = Auth::where("email", $email)->get()[0];
+        if (password_verify($password, $user->password)) {
+            $_SESSION["user"] = ["id" => $user->id, "firstname" => $user->firstname, "lastname" => $user->lastname, "email" => $user->email, "address" => $user->address];
+            return true;
         }
-        Auth::create();
-        return response()->json([
-            "status" => true,
-            "data" => $user->id
-        ], 200);
+        return false;
+    }
+    public function logout() {
+        unset($_SESSION['user']);
+        return true;
     }
 }

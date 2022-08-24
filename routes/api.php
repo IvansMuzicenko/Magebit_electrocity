@@ -25,6 +25,6 @@ Route::get("getAllProducts", [ProductController::class, "getAllProducts"]);
 Route::get("getProductById/{id}", [ProductController::class, "getProductById"]);
 // Route::post("images/add", [ProductController::class, "add"]);
 
-Route::get("getAuthById/{id}", [AuthController::class, "getProductById"]);
 Route::post("auth/register", [AuthController::class, "register"]);
-Route::post("auth/login/{id}", [AuthController::class, "login"]);
+Route::post("auth/login", [AuthController::class, "login"]);
+Route::get("auth/logout", [AuthController::class, "logout"]);

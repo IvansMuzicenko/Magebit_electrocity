@@ -109,6 +109,32 @@ require_once "./templates/header.php"
     fetch("api/auth/register", {
       method: "POST",
       body: data,
+    }).then(response => response.json()).then(data => {
+      if (data) {
+        location.pathname = "";
+      }
+    })
+
+  }
+  signIn.onsubmit = function(event) {
+    event.preventDefault();
+    const emailValue = document.querySelector(
+      "[name='login_email']"
+    ).value;
+    const passValue = document.querySelector(
+      "[name='login_password']"
+    ).value;
+
+    const data = new FormData();
+    data.set("email", emailValue);
+    data.set("password", passValue);
+    fetch("api/auth/login", {
+      method: "POST",
+      body: data,
+    }).then(response => response.json()).then(data => {
+      if (data) {
+        location.pathname = "";
+      }
     })
 
   }

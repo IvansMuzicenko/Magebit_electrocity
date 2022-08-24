@@ -28,15 +28,24 @@
                     <a class="nav-link" href="/catalogue">Catalogue</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/profile">Profile</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" href="/cart">Cart</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/auth">Auth</a>
-                </li>
+                <?php if (isset($_SESSION["user"])) :; ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile"><?php echo $_SESSION["user"]["firstname"] . " " . $_SESSION["user"]["lastname"]; ?></a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!isset($_SESSION["user"])) :; ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth">Login</a>
+                    </li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION["user"])) :; ?>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="fetch('api/auth/logout').then(location.pathname = '/auth')">Logout</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
