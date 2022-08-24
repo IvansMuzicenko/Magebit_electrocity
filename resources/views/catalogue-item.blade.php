@@ -72,6 +72,7 @@ require_once "./templates/header.php"
             document.querySelector(".img3").src = data.data[0].img3;
             document.querySelectorAll(".brand").forEach(el => el.textContent = data.data[0].brand)
             document.querySelectorAll(".model").forEach(el => el.textContent = data.data[0].model)
+            document.querySelector(".price").textContent = data.data[0].price;
             document.querySelector(".color").textContent = data.data[0].color;
             document.querySelector(".connection").textContent = data.data[0].connection;
 
