@@ -46,23 +46,14 @@ require_once "./templates/header.php"
 
 
 <script>
-  //local storage -> cart
-  const qty = document.querySelector('#quantity')
-  const qty_btn = document.getElementById('qty-btn')
+  const addBtn = document.querySelector("add-to-cart");
+  const amount = document.querySelector("amount");
 
-  qty_btn.onclick = function() {
-    const id = location.pathname.split('/')[2];
-    const key = 'quantity';
-    const value = qty.value;
-    let cart = {};
-    cart[id] = value;
-    console.log(cart);
+  //TODO
+  const productId = location.pathname.split("/")[2];
+  let cart = localStorage.getItem("cart");
 
-    localStorage.setItem('cart', cart)
-    console.log(localStorage);
-  }
 
-  // /local storage -> cart
 
 
   fetch("/api/getProductById/" + location.pathname.split("/")[2])
@@ -100,6 +91,8 @@ require_once "./templates/header.php"
       }
     });
 </script>
+
+<script src="../../assets/script.js"></script>
 
 <?php
 require_once "./templates/footer.php"

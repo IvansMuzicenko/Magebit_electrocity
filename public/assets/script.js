@@ -1,4 +1,3 @@
 if (localStorage.getItem("cart") == null) {
-    localStorage.setItem("cart", {});
+    localStorage.setItem("cart", []);
 }
-console.log(localStorage);
