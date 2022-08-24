@@ -58,18 +58,20 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
-    <div class="offcanvas-body">
-      <div class="cart-item-bg bg-secondary d-flex justify-content-between align-items-center">
-        <a href="/catalogue/1" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" aria-current="true">
-          <div id="cartItems" class="container d-flex justify-content-between align-items-center">
-            <img id="cartImg" class="rounded" src="https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg" alt="">
-            <p id="cartBrand" class="fs-6 fw-bold mt-auto mb-auto p-1">Logitech</p>
-            <p id="carkModel" class="fs-6 fw-light mt-auto mb-auto">G201</p>
-            <p id="cartPrice" class="fs-6 fw-bold mt-auto mb-auto p-3">20,99 €</p>
+    <div class="offcanvas-body small-cart-items">
+      <div class="cart-item-template visually-hidden">
+        <a href="" class="cart-item-link w-100 d-flex align-items-center" aria-current="true">
+          <div class="cart-item container d-flex justify-content-between align-items-center">
+            <img class="cart-item-img rounded" src="" alt="">
+            <p class="cart-item-brand fs-6 fw-bold mt-auto mb-auto p-1"></p>
+            <p class="cart-item-model fs-6 fw-light mt-auto mb-auto"></p>
+            <p class="cart-item-price fs-6 fw-bold mt-auto mb-auto p-3"></p>
           </div>
         </a>
-        <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text text-center" size="4">
-        <button id="cart-item-remove" href="#" class="fs-5 fw-bold ms-5 me-3"><img src="../assets/images/delete.svg" alt=""></button>
+        <div class="d-flex">
+          <input type="number" step="1" min="1" value="1" class="cart-item-amount input-text qty text text-center" size="4">
+          <button href="#" class="fs-5 fw-bold mx-2 cart-item-remove"><img src="../assets/images/delete.svg" alt=""></button>
+        </div>
       </div>
     </div>
 

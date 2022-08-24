@@ -1,0 +1,31 @@
+const fillCart = function () {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    const cartField = document.querySelector(".small-cart-items");
+    const cartItemTemplate = document.querySelector(".cart-item-template");
+
+    for (let productId of Object.keys(cart)) {
+        fetch("http://localhost:8000/api/getProductById/" + productId)
+            .then((response) => response.json())
+            .then((data) => {
+                const dbItem = data.data[0];
+                let newItem = document.createElement("div");
+                newItem.innerHTML = cartItemTemplate.innerHTML;
+                newItem.className =
+                    "cart-item-bg bg-secondary d-flex mb-3 justify-content-between align-items-center";
+                newItem.querySelector(".cart-item-link").href =
+                    "/catalogue/" + productId;
+                newItem.querySelector(".cart-item-img").src = dbItem["img1"];
+                newItem.querySelector(".cart-item-brand").textContent =
+                    dbItem["brand"];
+                newItem.querySelector(".cart-item-model").textContent =
+                    dbItem["model"];
+                newItem.querySelector(".cart-item-price").textContent =
+                    "€" + dbItem["price"];
+                newItem.querySelector(".cart-item-amount").value =
+                    cart[productId];
+
+                cartField.append(newItem);
+            });
+    }
+};
+fillCart();
