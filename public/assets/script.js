@@ -1,7 +1,20 @@
+const deleteFromCart = function (productId) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    delete cart[productId];
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
+const changeProductAmount = function (productId, newAmount) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart[productId] = newAmount;
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
 const fillCart = function () {
     let cart = JSON.parse(localStorage.getItem("cart"));
     const cartField = document.querySelector(".small-cart-items");
     const cartItemTemplate = document.querySelector(".cart-item-template");
+
+    cartField.innerHTML = cartItemTemplate.outerHTML;
+    //fill cart after cart change
 
     for (let productId of Object.keys(cart)) {
         fetch("http://localhost:8000/api/getProductById/" + productId)
@@ -23,7 +36,14 @@ const fillCart = function () {
                     "€" + dbItem["price"];
                 newItem.querySelector(".cart-item-amount").value =
                     cart[productId];
+                newItem.querySelector(".cart-item-amount").onchange = () =>
+                    changeProductAmount(
+                        productId,
+                        newItem.querySelector(".cart-item-amount").value
+                    );
 
+                newItem.querySelector(".cart-item-remove").onclick = () =>
+                    deleteFromCart(productId);
                 cartField.append(newItem);
             });
     }

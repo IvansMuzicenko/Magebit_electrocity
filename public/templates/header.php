@@ -70,7 +70,7 @@
         </a>
         <div class="d-flex">
           <input type="number" step="1" min="1" value="1" class="cart-item-amount input-text qty text text-center" size="4">
-          <button href="#" class="fs-5 fw-bold mx-2 cart-item-remove"><img src="../assets/images/delete.svg" alt=""></button>
+          <button class="fs-5 fw-bold mx-2 cart-item-remove"><img src="../assets/images/delete.svg" alt=""></button>
         </div>
       </div>
     </div>
