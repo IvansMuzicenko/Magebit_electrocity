@@ -7,16 +7,14 @@ use Illuminate\Database\Seeder;
 use App\Models\Products;
 use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
-{
+class DatabaseSeeder extends Seeder {
     use WithoutModelEvents;
     /**
      * Seed the application's database.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
         //Mouses ----------------------------------------
         $mouseBrand = [
             "Logitech",
@@ -100,24 +98,24 @@ class DatabaseSeeder extends Seeder
 
         ];
         $mousePrice = [
-            "30,00",
-            "35,00",
-            "99,00",
-            "80,00",
-            "47,00",
-            "93,00",
-            "60,00",
-            "80,00",
-            "51,00",
-            "83,00",
-            "204,00",
-            "77,95",
-            "72,00",
-            "64,00",
-            "87,00",
-            "35,00",
-            "23,96",
-            "32,24",
+            30.00,
+            35.00,
+            99.00,
+            80.00,
+            47.00,
+            93.00,
+            60.00,
+            80.00,
+            51.00,
+            83.00,
+            204.00,
+            77.95,
+            72.00,
+            64.00,
+            87.00,
+            35.00,
+            23.96,
+            32.24,
 
         ];
         $mouseImg1 = [
@@ -251,21 +249,21 @@ class DatabaseSeeder extends Seeder
             "USB",
         ];
         $keyboardPrice = [
-            "150,00",
-            "100,00",
-            "50,00",
-            "47,00",
-            "68,00",
-            "55,00",
-            "46,29",
-            "124,35",
-            "183,29",
-            "120,5",
-            "99,65",
-            "133",
-            "52,49",
-            "84",
-            "59,9",
+            150.00,
+            100.00,
+            50.00,
+            47.00,
+            68.00,
+            55.00,
+            46.29,
+            124.35,
+            183.29,
+            120.50,
+            99.65,
+            133.00,
+            52.49,
+            84.00,
+            59.90,
         ];
 
         $keyboardImg1 = [
@@ -374,17 +372,17 @@ class DatabaseSeeder extends Seeder
             "3.5 mm",
         ];
         $headsetPrice = [
-            "54,00",
-            "60,00",
-            "59,99",
-            "59,99",
-            "79,99",
-            "188,99",
-            "420,42",
-            "63,70",
-            "318,00",
-            "140,00",
-            "173,66",
+            54.00,
+            60.00,
+            59.99,
+            59.99,
+            79.99,
+            188.99,
+            420.42,
+            63.70,
+            318.00,
+            140.00,
+            173.66,
         ];
         $headsetImg1 = [
             "https://images.1a.lv/display/aikido/store/8c8c08771287f36f08f014344df0adb4.jpg?h=742&w=816",

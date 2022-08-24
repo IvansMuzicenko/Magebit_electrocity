@@ -34,7 +34,7 @@ require_once "./templates/header.php";
       <option value="3.5mm">3.5mm</option>
     </select>
 
-    <input type="text" name="product_price" id="add-price" style="width: 15rem;" class="form-control" placeholder="Price">
+    <input type="number" name="product_price" id="add-price" style="width: 15rem;" class="form-control" placeholder="Price">
 
     <input type="text" name="product_img1" id="add-img_1" style="width: 15rem;" class="form-control" placeholder="Picture 1">
     <input type="text" name="product_img2" id="add-img_2" style="width: 15rem;" class="form-control" placeholder="Picture 2">

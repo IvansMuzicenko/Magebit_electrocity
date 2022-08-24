@@ -36,6 +36,10 @@ require_once "./templates/header.php"
 			<option value="3.5mm">3.5mm</option>
 		</select>
 		<button class="btn clear_filter">Clear filter</button>
+		<select class="form-select sort" name="sort">
+			<option value="asc">From lower to higher</option>
+			<option value="desc" selected>From higher to lower</option>
+		</select>
 	</form>
 
 	<div class="catalogue row m-0 d-flex justify-content-center gap-2 mb-5 pb-2 pt-5 mt-3">
@@ -69,7 +73,7 @@ require_once "./templates/header.php"
 			newItem.querySelector("img").style =
 				"height: 200px; object-fit:contain;";
 			newItem.querySelector(".card-text").textContent =
-				item.brand + " " + item.model + " " + item.price;
+				item.brand + " " + item.model + " " + "€" + item.price;
 
 			catalogue.append(newItem);
 		}
@@ -89,6 +93,7 @@ require_once "./templates/header.php"
 		data.set("brand", document.querySelector(".filter_brand").value);
 		data.set("color", document.querySelector(".filter_color").value);
 		data.set("connection", document.querySelector(".filter_connection").value);
+		data.set("sort", document.querySelector(".sort").value);
 
 		fetch("api/getFilteredProducts", {
 			method: "POST",
@@ -110,6 +115,7 @@ require_once "./templates/header.php"
 	document.querySelectorAll(".filter_select").forEach(select => {
 		select.onchange = filterFunction;
 	})
+	document.querySelector(".sort").onchange = filterFunction;
 
 	document.querySelector(".filter").onsubmit = (e) => e.preventDefault();
 </script>

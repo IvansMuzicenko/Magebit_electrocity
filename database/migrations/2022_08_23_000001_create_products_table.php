@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->string('model');
             $table->string('color');
             $table->string('connection');
-            $table->string('price');
+            $table->integer('price');
             $table->string('img1');
             $table->string('img2');
             $table->string('img3');

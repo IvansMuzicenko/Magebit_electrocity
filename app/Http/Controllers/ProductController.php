@@ -31,6 +31,7 @@ class ProductController extends BaseController {
         $brand = $_POST["brand"];
         $color = $_POST["color"];
         $connection = $_POST["connection"];
+        $sort = $_POST["sort"];
         $filterArray = [];
         if ($type != "*") {
             array_push($filterArray, ["type", $type]);
@@ -47,7 +48,7 @@ class ProductController extends BaseController {
         $query = DB::table('products')->where($filterArray);
         return response()->json([
             "status" => true,
-            "data" => $query->get()
+            "data" => $query->orderBy('price', $sort)->get()
         ], 200);
     }
     public function getProductById($id) {
