@@ -29,7 +29,7 @@ class ProductController extends BaseController {
     public function getProductById($id) {
         return response()->json([
             "status" => true,
-            "data" => Products::where("id", $id)
+            "data" => Products::where("id", $id)->get()
         ], 200);
     }
     // public function add() {
