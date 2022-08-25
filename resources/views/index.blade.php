@@ -12,25 +12,34 @@ require_once "./templates/header.php";
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../assets/images/banner1.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
-            <div id="textBg" class="carousel-caption d-none d-md-block">
-                <p class="h1 fw-light">Welcome to ELECTROCITY</p>
-                <p class="fs-5">Best online shop in Europe</p>
-            </div>
+            <a href="catalogue/">
+                <img src="../assets/images/banner1.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+
+                <div id="textBg" class="carousel-caption d-none d-md-block">
+                    <p class="h1 fw-light">Welcome to ELECTROCITY</p>
+                    <p class="fs-5">Best online shop in Europe</p>
+                </div>
+            </a>
         </div>
         <div class="carousel-item">
-            <img src="../assets/images/banner2.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <p class="h1 fw-light">logitech x electroCity</p>
-                <p>Best devices by logitech</p>
-            </div>
+            <a href="catalogue?brand=Logitech">
+                <img src="../assets/images/banner2.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="h1 fw-light">logitech x electroCity</p>
+                    <p>Best devices by logitech</p>
+                </div>
+            </a>
         </div>
         <div class="carousel-item">
-            <img src="../assets/images/banner3.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <p class="h1 fw-light">razer x electroCity</p>
-                <p>"For gamers by gamers." devices can find in our e-shop</p>
-            </div>
+            <a href="catalogue?brand=Razer">
+                <img src="../assets/images/banner3.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="h1 fw-light">razer x electroCity</p>
+                    <p>"For gamers by gamers." devices can find in our e-shop</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -59,10 +68,10 @@ require_once "./templates/header.php";
     <a href="catalogue?type=Mouse">
         <img src="../assets/images/categorieMouses.svg" alt="">
     </a>
-    <a href="catalogue?filter_type=Keyboard">
+    <a href="catalogue?type=Keyboard">
         <img src="../assets/images/categorieKeyboards.svg" alt="">
     </a>
-    <a href="catalogue?filter_type=Headset">
+    <a href="catalogue?type=Headset">
         <img src="../assets/images/categorieHeadsets.svg" alt="">
     </a>
 </div>
