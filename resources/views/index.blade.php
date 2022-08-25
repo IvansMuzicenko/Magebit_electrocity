@@ -54,7 +54,7 @@ require_once "./templates/header.php";
 </div>
 
 
-<div id="carousel" class="carousel slide " data-bs-interval="1" data-bs-ride="carousel">
+<div id="carousel" class="carousel slide" data-bs-interval="1" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item sanja active">
             <div class="carousel-item-wrapper d-flex">
@@ -79,11 +79,11 @@ require_once "./templates/header.php";
 
     </div>
 </div>
-<div class="d-flex justify-content-center mt-5">
+<div class="d-flex justify-content-center mt-3">
     <a href="catalogue" type="submit" class="btn btn-primary btn-lg mb-5 catalogue-btn">Catalogue</a>
 </div>
 
-<div class="categorie">
+<div class="category">
     <a href="http://localhost:8000/catalogue?type=Mouse">
         <img src="../assets/images/categorieMouses.svg" alt="">
     </a>
@@ -91,12 +91,13 @@ require_once "./templates/header.php";
         <img src="../assets/images/categorieKeyboards.svg" alt="">
     </a>
     <a href="http://localhost:8000/catalogue?type=Headset">
-        <img src="../assets/images/categorieHeadsets.svg" alt="">
+        <img src="../assets/images/categorieHeadsets.svg" class="mb-3"alt="">
     </a>
 </div>
 
 
 <script>
+    
     fetch("api/getAllProducts")
         .then((response) => response.json())
         .then((data) => {
@@ -104,14 +105,25 @@ require_once "./templates/header.php";
             const catalogueItemTemplate = document.querySelector(
                 ".catalogue-index-card-template"
             );
+
             let i = 0;
             let appendTarget
             console.log(window.innerWidth);
-            if (window.innerWidth > 1000) {
+
+          
+                if (window.innerWidth > 1000) {
                 appendTarget = document.querySelectorAll('.carousel-item-wrapper');
+                
             } else {
                 appendTarget = document.querySelectorAll('.catalogue-index')
             }
+            
+            
+
+
+     
+
+
             for (let item of data.data) {
                 i++;
                 const newItem = document.createElement("a");
@@ -124,6 +136,7 @@ require_once "./templates/header.php";
                     "max-width: 20rem; width: 100%; height: 10rem; object-fit:contain;";
                 newItem.querySelector(".card-text").textContent =
                     item.brand + " " + item.model + " " + "€" + item.price;
+    
 
                 let n = 0;
                 console.log(appendTarget.length);

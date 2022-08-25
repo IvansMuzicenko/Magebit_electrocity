@@ -23,7 +23,7 @@
     background: rgb(0, 0, 0, 0.9);
 }
 
-.categorie img {
+.category img {
     border-radius: 10px;
     margin: 5px;
     height: 100px;
@@ -34,9 +34,8 @@
 
 .sanja {
     transition: linear;
-    transition-duration: 15s !important;
+    transition-duration: 10s !important;
 }
-
 
 
 
