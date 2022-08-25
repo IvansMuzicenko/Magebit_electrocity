@@ -20,3 +20,15 @@
     background-color: transparent;
     border: none;
 }
+
+li {
+    transition: .2s;
+}
+
+li:hover{
+    border-radius: 10px;
+    transition: .2s;
+    background: rgba(219, 228, 255, 0.3);
+    
+}
+
