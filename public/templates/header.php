@@ -13,7 +13,7 @@
   <nav class=" navbar navbar-expand-lg bg-main text-white ">
     <div class="container-fluid ms-3">
       <a class="navbar-brand p-0 d-flex align-center" href="http://localhost:8000/">
-        <img src="../assets/images/logoW.svg" alt="" width="" height="40" class="d-inline-block align-text-top">
+        <img src="../assets/images/logoW.svg" alt="" width="" height="64" class="d-inline-block align-text-top">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

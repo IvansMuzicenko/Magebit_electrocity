@@ -38,4 +38,12 @@ class OrdersController extends BaseController {
         ]);
         return true;
     }
+
+    public function getOrdersById() {
+        $customer_id = $_POST["customer_id"];
+        return response()->json([
+            "status" => true,
+            "data" => Products::where("customer_id", $customer_id)->get()
+        ], 200);
+    }
 }
