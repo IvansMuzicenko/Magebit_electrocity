@@ -49,6 +49,9 @@ const fillCart = function () {
     //fill cart after cart change
 
     for (let productId of Object.keys(cart)) {
+        if (!productId) {
+            return;
+        }
         fetch("http://localhost:8000/api/getProductById/" + productId)
             .then((response) => response.json())
             .then((data) => {
