@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrdersController;
 
 Route::get("getAllProducts", [ProductController::class, "getAllProducts"]);
 Route::get("getProductById/{id}", [ProductController::class, "getProductById"]);
@@ -29,3 +30,5 @@ Route::post("addProduct", [ProductController::class, "addProduct"]);
 Route::post("auth/register", [AuthController::class, "register"]);
 Route::post("auth/login", [AuthController::class, "login"]);
 Route::get("auth/logout", [AuthController::class, "logout"]);
+
+Route::post("orders/placeOrder", [OrdersController::class, "placeOrder"]);

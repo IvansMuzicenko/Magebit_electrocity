@@ -33,6 +33,15 @@ return new class extends Migration {
             $table->date('updated_at');
             $table->date('created_at');
         });
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id("id");
+            $table->integer('product_id');
+            $table->integer('amount');
+            $table->integer('customer_id');
+            $table->string('customer_address');
+            $table->string('customer_email');
+            $table->date('order_date');
+        });
     }
 
     /**
