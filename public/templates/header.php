@@ -20,7 +20,7 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav text-center">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost:8000/">Home</a>
         </li>
