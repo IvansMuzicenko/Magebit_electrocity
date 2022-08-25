@@ -77,14 +77,10 @@ const fillCart = function () {
                 newItem.querySelector(".cart-item-remove").onclick = () =>
                     deleteFromCart(productId);
 
-                let newItemCopy = document.createElement("div");
-                newItemCopy.innerHTML = newItem.innerHTML;
-                newItemCopy.className =
-                    "cart-item-bg bg-secondary d-flex mb-3 justify-content-between align-items-center";
-                cartField.append(newItem);
                 if (cartPageField) {
-                    cartPageField.append(newItemCopy);
+                    cartPageField.append(newItem.cloneNode(true));
                 }
+                cartField.append(newItem);
                 calcTotal(cart[productId] * dbItem["price"]);
             });
     }

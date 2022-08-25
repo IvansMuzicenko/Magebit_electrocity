@@ -39,8 +39,8 @@ require_once "./templates/header.php"
             })
 
         }
-        alert("Order placed, thanks for purchases!")
-        location.reload()
+        alert("Order placed, thanks for purchases!");
+        location.reload();
     }
 </script>
 
