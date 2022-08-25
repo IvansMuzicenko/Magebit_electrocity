@@ -7,25 +7,25 @@ require_once "./templates/header.php"
 		<h3>Filter items</h3>
 	</div>
 
-	<form class="filter d-flex justify-content-center mt-1 pt-1 gap-2">
-		<select class="form-select filter_select filter_type " style="width: 10rem; height:3rem;" aria-label="Default select example">
+	<form class="filter d-flex justify-content-center flex-wrap mt-1 pt-1 gap-2">
+		<select class="form-select filter_select filter_type " style=" width:100%; max-width: 7rem; height:3rem;" aria-label="Default select example">
 			<option value="*" selected>Product type</option>
 		</select>
-		<select class="form-select filter_select filter_brand" style="width: 7rem; height:3rem;" aria-label="Default select example">
+		<select class="form-select filter_select filter_brand" style="width:100%; max-width: 7rem; height:3rem;" aria-label="Default select example">
 			<option value="*" selected>Brand</option>
 		</select>
-		<select class="form-select filter_select filter_color" style="width: 7rem; height:3rem;" aria-label="Default select example">
+		<select class="form-select filter_select filter_color" style="width:100%; max-width: 7rem; height:3rem;" aria-label="Default select example">
 			<option value="*" selected>Color</option>
 		</select>
-		<select class="form-select filter_select filter_connection" style="width: 10rem; height:3rem;" aria-label="Default select example">
+		<select class="form-select filter_select filter_connection" style="width:100%; max-width: 7rem; height:3rem;" aria-label="Default select example">
 			<option value="*" selected>Connection</option>
 		</select>
-		<button class="btn clear_filter" style="width: 7rem; height:3rem;">Clear</button>
-		<select class="form-select sort" name="sort" style="width: 8rem; height:3rem;">
+		<select class="form-select sort" name="sort" style="width:100%; max-width: 7rem; height:3rem;">
 			<option value="" selected>Sort</option>
 			<option value="asc">From lower to higher</option>
 			<option value="desc">From higher to lower</option>
 		</select>
+		<button class="btn clear_filter" style="width:100%; max-width: 7rem; height:3rem;">Clear</button>
 	</form>
 
 	<p class="w-100 my-5 fs-5 text-center visually-hidden no-products">No products found</p>
