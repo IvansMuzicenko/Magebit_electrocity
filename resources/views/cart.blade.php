@@ -18,7 +18,6 @@ require_once "./templates/header.php"
         const cart = JSON.parse(localStorage.getItem("cart"));
 
         for (let [productId, amount] of Object.entries(cart)) {
-            console.log(productId, amount);
             const data = new FormData();
             data.set("product_id", productId);
             data.set("amount", amount);

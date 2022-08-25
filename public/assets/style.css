@@ -28,6 +28,11 @@ body {
     width: 100vw;
     padding: 0 10%;
 }
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 1px !important;
+    }
+}
 footer {
     margin: 0 !important;
 }
@@ -54,6 +59,9 @@ footer {
     background: #37b24d;
     color: white;
     border: none;
+}
+.nav-link {
+    cursor: pointer;
 }
 @font-face {
     font-family: "Montserrat";

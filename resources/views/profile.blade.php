@@ -29,7 +29,7 @@ require_once "./templates/header.php"
   </table>
 
   <!-- HISTORY -->
-  <p class="h1 text-center m-5 mb-2">Purchases</p>
+  <p class="h1 text-center m-5 mb-2">History</p>
   <div class="list-group history">
 
     <a href="" class="history-item-template">

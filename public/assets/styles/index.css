@@ -2,6 +2,11 @@
     width: 100vw;
     margin-left: -10vw;
 }
+@media screen and (max-width: 768px) {
+    #carouselBanner {
+        margin: 0;
+    }
+}
 .carousel-item {
     position: relative;
 }
@@ -36,7 +41,3 @@
     transition: linear;
     transition-duration: 10s !important;
 }
-
-
-
-

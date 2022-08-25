@@ -107,7 +107,6 @@ require_once "./templates/header.php";
 
             let i = 0;
             let appendTarget
-            console.log(window.innerWidth);
 
 
             if (window.innerWidth > 1000) {
@@ -138,7 +137,6 @@ require_once "./templates/header.php";
 
 
                 let n = 0;
-                console.log(appendTarget.length);
                 if (appendTarget.length > 1) {
                     if (i > 5) {
                         n = 1

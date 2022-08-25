@@ -45,7 +45,7 @@
         <?php endif; ?>
         <?php if (isset($_SESSION["user"])) :; ?>
           <li class="nav-item">
-            <a class="nav-link" onclick="fetch('api/auth/logout').then(location.pathname = '/auth')">Logout</a>
+            <a class="nav-link logout-btn">Logout</a>
           </li>
         <?php endif; ?>
       </ul>
@@ -86,4 +86,17 @@
   <!--/OFFCANVAS BODY-->
 
   <!-- todo main block height to maximum -->
+
+  <script>
+    const logoutBtn = document.querySelector(".logout-btn");
+    if (logoutBtn) {
+      logoutBtn.onclick = function() {
+        fetch('http://localhost:8000/api/auth/logout').then(response => response.json()).then(data => {
+          if (data) {
+            location.pathname = '/auth'
+          }
+        })
+      }
+    }
+  </script>
   <main class="wrapper">
