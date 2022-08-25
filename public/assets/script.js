@@ -33,7 +33,7 @@ const fillCart = function () {
                 newItem.className =
                     "cart-item-bg bg-secondary d-flex mb-3 justify-content-between align-items-center";
                 newItem.querySelector(".cart-item-link").href =
-                    "/catalogue/" + productId;
+                    "http://localhost:8000/catalogue/" + productId;
                 newItem.querySelector(".cart-item-img").src = dbItem["img1"];
                 newItem.querySelector(".cart-item-brand").textContent =
                     dbItem["brand"];
