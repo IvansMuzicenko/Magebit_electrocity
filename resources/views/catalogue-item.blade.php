@@ -2,7 +2,7 @@
 require_once "./templates/header.php"
 ?>
 
-<div id="productCard" class="card d-flex">
+<div id="productCard" class="card d-flex adding-product">
   <div id="productCarousel" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -38,8 +38,8 @@ require_once "./templates/header.php"
     <li class="list-group-item">Connection type: <span class="connection fw-bold"></span></li>
   </ul>
   <div class="card-body d-flex flex-column align-items-center">
-    <input type="number" class="amount" placeholder="qty" style="width: 3rem;">
-    <a id="add" class="card-link btn btn-primary btn-lg add-to-cart mt-3">Add to cart</a>
+    <input type="number" min="1" value="1" class="add-to-cart-amount" placeholder="qty" style="width: 3rem;">
+    <a id="add" class="card-link btn btn-primary btn-lg add-to-cart-btn mt-3">Add to cart</a>
   </div>
 </div>
 
@@ -63,6 +63,7 @@ require_once "./templates/header.php"
       document.querySelector(".price").textContent = data.data[0].price;
       document.querySelector(".color").textContent = data.data[0].color;
       document.querySelector(".connection").textContent = data.data[0].connection;
+      document.querySelector(".add-to-cart-btn").dataset['id'] = data.data[0].id;
 
       switch (data.data[0].brand) {
         case "Logitech":

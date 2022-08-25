@@ -38,8 +38,8 @@ require_once "./templates/header.php"
 				</div>
 			</a>
 			<div class="d-flex flex-column align-items-center">
-				<input type="number" min="0" value="0" class="amount" placeholder="Amount" style="width: 3rem;">
-				<button class="btn btn-primary mt-3 mb-3">Add to cart</button>
+				<input type="number" min="1" value="1" class="add-to-cart-amount" placeholder="Amount" style="width: 3rem;">
+				<button class="btn btn-primary mt-3 mb-3 add-to-cart-btn">Add to cart</button>
 			</div>
 		</div>
 	</div>
@@ -113,13 +113,14 @@ require_once "./templates/header.php"
 		}
 		for (let item of items) {
 			const newItem = document.createElement("div");
-			newItem.classList.add("card");
+			newItem.className = "card adding-product";
 			newItem.style = "width: 18rem;";
 			newItem.innerHTML = catalogueItemTemplate.innerHTML;
 			newItem.querySelector(".card-link").href = "http://localhost:8000/catalogue/" + item.id;
 			newItem.querySelector("img").src = item.img1;
 			newItem.querySelector("img").style =
 				"height: 200px; object-fit:contain;";
+			newItem.querySelector(".add-to-cart-btn").dataset['id'] = item.id;
 			newItem.querySelector(".card-text").textContent =
 				item.brand + " " + item.model + " " + "€" + item.price;
 

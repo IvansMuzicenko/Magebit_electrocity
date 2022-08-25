@@ -1,4 +1,5 @@
 const productId = location.pathname.split("/")[2];
+let addingProduct = document.querySelectorAll(".adding-product");
 
 if (localStorage.getItem("cart") == null) {
     localStorage.setItem("cart", JSON.stringify({}));
@@ -19,6 +20,7 @@ const fillCart = function () {
     let cart = JSON.parse(localStorage.getItem("cart"));
     const cartField = document.querySelector(".small-cart-items");
     const cartItemTemplate = document.querySelector(".cart-item-template");
+    const cartPageField = document.querySelector(".cart-list");
 
     cartField.innerHTML = cartItemTemplate.outerHTML;
     //fill cart after cart change
@@ -51,7 +53,11 @@ const fillCart = function () {
 
                 newItem.querySelector(".cart-item-remove").onclick = () =>
                     deleteFromCart(productId);
+                let newItemCopy = newItem;
                 cartField.append(newItem);
+                if (cartPageField) {
+                    cartPageField.append(newItemCopy);
+                }
             });
     }
 };
@@ -59,16 +65,31 @@ fillCart();
 
 //from product-item page
 
-const addToCart = function (event, productId) {
-    const amount = document.querySelector(".amount").value;
-
+const addToCart = function (productId, amount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
 
     cart[productId] = cart[productId]
         ? Number(cart[productId]) + Number(amount)
         : Number(amount);
+    if (Number(amount) < 1) {
+        return;
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
     fillCart();
 };
-document.querySelector(".add-to-cart").onclick = () =>
-    addToCart(event, productId);
+
+const interval = setInterval(() => {
+    addingProduct = document.querySelectorAll(".adding-product");
+    if (addingProduct.length) {
+        clearInterval(interval);
+        for (let product of addingProduct) {
+            const addBtn = product.querySelector(".add-to-cart-btn");
+            const productId = addBtn.dataset["id"];
+            addBtn.onclick = () =>
+                addToCart(
+                    productId,
+                    product.querySelector(".add-to-cart-amount").value
+                );
+        }
+    }
+}, 500);

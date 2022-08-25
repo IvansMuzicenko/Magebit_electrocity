@@ -1,16 +1,15 @@
-#cart{
+.cart {
     width: 1000px;
 }
 
-#cartList{
+.cart-list {
     width: 800px;
 }
 
-#cartList a{
-   margin-bottom: 5px;
+.cart-list a {
+    margin-bottom: 5px;
 }
 
 .btn {
     text-transform: uppercase;
 }
-
