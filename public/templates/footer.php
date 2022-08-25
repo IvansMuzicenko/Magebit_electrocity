@@ -3,7 +3,7 @@
 
     <h5 class="text-center fw-bold mt-2">About US</h5>
 
-    <div class="aboutUs d-flex justify-content-around m-2">
+    <div class="aboutUs d-flex justify-content-evenly m-2">
         <div class="mainInfo">
             <p style="font-size: 13px;"><span class="fw-bold">E-mail:</span><br>support@electrocity.com</p>
             <p style="font-size: 13px;"><span class="fw-bold">Addres:</span><br>911 Magebit street, Riga, Latvia</p>
