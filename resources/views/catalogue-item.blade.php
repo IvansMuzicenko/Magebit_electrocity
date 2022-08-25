@@ -37,9 +37,9 @@ require_once "./templates/header.php"
     <li class="list-group-item">Color: <span class="color fw-bold"></span></li>
     <li class="list-group-item">Connection type: <span class="connection fw-bold"></span></li>
   </ul>
-  <div class="card-body d-flex justify-content-center">
-    <input type="number" class="amount">
-    <a id="add" class="card-link btn btn-primary btn-lg add-to-cart">Add to cart</a>
+  <div class="card-body d-flex flex-column align-items-center">
+    <input type="number" class="amount" placeholder="qty" style="width: 3rem;">
+    <a id="add" class="card-link btn btn-primary btn-lg add-to-cart mt-3">Add to cart</a>
   </div>
 </div>
 
