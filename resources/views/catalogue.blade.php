@@ -96,6 +96,20 @@ require_once "./templates/header.php"
 				newOption.textContent = conn;
 				connSelect.append(newOption)
 			}
+			if (location.search.length) {
+				let query = location.search;
+				query = query.replace("?", "");
+				let queryArr = query.split("&");
+				let queryFilters = {};
+				queryArr.forEach(el => {
+					let splitEl = el.split("=");
+					queryFilters[splitEl[0]] = splitEl[1];
+				})
+				for (let [filter, value] of Object.entries(queryFilters)) {
+					document.querySelector(`.filter_${filter}`).value = value;
+				}
+				filterFunction();
+			}
 
 		});
 
@@ -155,20 +169,7 @@ require_once "./templates/header.php"
 			displayItems(data.data);
 		})
 	}
-	if (location.search.length) {
-		let query = location.search;
-		query = query.replace("?", "");
-		let queryArr = query.split("&");
-		let queryFilters = {};
-		queryArr.forEach(el => {
-			let splitEl = el.split("=");
-			queryFilters[splitEl[0]] = splitEl[1];
-		})
-		for (let [filter, value] of Object.entries(queryFilters)) {
-			document.querySelector(".filter_" + filter).value = value;
-		}
-		filterFunction();
-	}
+
 
 	document.querySelector(".clear_filter").onclick = function(event) {
 		event.preventDefault();
