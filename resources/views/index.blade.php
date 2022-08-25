@@ -46,22 +46,41 @@ require_once "./templates/header.php";
 
 <!-- CATALOGUE -->
 
-<div id="cardsIndexCatalogue" class="d-flex justify-content-center mt-5">
+<div id="cardsIndexCatalogue" class="d-flex justify-content-center mt-5 ">
     <h3>Catalogue</h3>
 </div>
 <div class="catalogue-index row m-0 d-flex justify-content-center text-center gap-2 mb-5 pb-2">
 
-    <a href="#" class="card catalogue-index-card-template" style="width: 18rem;">
-        <div>
-            <img src="" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text"></p>
+</div>
+
+
+<div id="carousel" class="carousel slide " data-bs-interval="1" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item sanja active">
+            <div class="carousel-item-wrapper d-flex">
+                <a href="#" class="card catalogue-index-card-template">
+                    <div class="m-auto" style="width: 100%;">
+                        <img src="" class=" m-auto" alt="...">
+                        <div class="card-body text-center">
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </a>
-    <div class="d-flex justify-content-center mt-5">
-        <a href="catalogue" type="submit" class="btn btn-primary btn-lg mb-5 catalogue-btn">Catalogue</a>
+        <div class="carousel-item sanja">
+            <div class="carousel-item-wrapper d-flex">
+            </div>
+        </div>
+        <div class="carousel-item sanja">
+            <div class="carousel-item-wrapper d-flex">
+            </div>
+        </div>
+
     </div>
+</div>
+<div class="d-flex justify-content-center mt-5">
+    <a href="catalogue" type="submit" class="btn btn-primary btn-lg mb-5 catalogue-btn">Catalogue</a>
 </div>
 
 <div class="categorie">
@@ -77,8 +96,6 @@ require_once "./templates/header.php";
 </div>
 
 
-
-
 <script>
     fetch("api/getAllProducts")
         .then((response) => response.json())
@@ -88,22 +105,39 @@ require_once "./templates/header.php";
                 ".catalogue-index-card-template"
             );
             let i = 0;
+            let appendTarget
+            console.log(window.innerWidth);
+            if (window.innerWidth > 1000) {
+                appendTarget = document.querySelectorAll('.carousel-item-wrapper');
+            } else {
+                appendTarget = document.querySelectorAll('.catalogue-index')
+            }
             for (let item of data.data) {
                 i++;
                 const newItem = document.createElement("a");
                 newItem.href = "catalogue/" + item.id;
                 newItem.classList.add("card");
-                newItem.style = "width: 20rem;";
+                newItem.style = "width: 20rem; height: 20rem;";
                 newItem.innerHTML = catalogueItemTemplate.innerHTML;
                 newItem.querySelector("img").src = item.img1;
                 newItem.querySelector("img").style =
-                    "height:200px; object-fit:contain;";
+                    "max-width: 20rem; width: 100%; height: 10rem; object-fit:contain;";
                 newItem.querySelector(".card-text").textContent =
                     item.brand + " " + item.model + " " + "€" + item.price;
 
-                catalogueIndex.prepend(newItem);
-                if (i == 10) {
-                    catalogueItemTemplate.remove();
+                let n = 0;
+                console.log(appendTarget.length);
+                if (appendTarget.length > 1) {
+                    if (i > 5) {
+                        n = 1
+                        if (i > 10) {
+                            n = 2
+                        }
+                    }
+                }
+                appendTarget[n].append(newItem);
+                if (i > 15) {
+                    catalogueItemTemplate.remove()
                     return;
                 }
             }

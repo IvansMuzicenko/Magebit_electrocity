@@ -14,12 +14,12 @@
     color: #000;
     left: 0;
     bottom: 0;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-#carouselBanner:hover .carousel-caption{
-    color:#fff;
-    transition: .5s;
+#carouselBanner:hover .carousel-caption {
+    color: #fff;
+    transition: 0.5s;
     background: rgb(0, 0, 0, 0.9);
 }
 
@@ -30,10 +30,14 @@
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    
 }
 
-.card {
-    color:#000;
-    text-decoration: none;
+.sanja {
+    transition: linear;
+    transition-duration: 15s !important;
 }
+
+
+
+
+
