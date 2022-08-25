@@ -9,19 +9,19 @@ require_once "./templates/header.php"
     <table class="table text-center ">
         <tr class="row m-auto">
             <th class="col table-light fw-light">Name:</th>
-            <td id="profileName" class="col table-light fw-bold">Ivans</td>
+            <td id="profileName" class="col table-light fw-bold"><?php echo $_SESSION["user"]["firstname"] ?></td>
         </tr>
         <tr class="row m-auto">
             <th class="col table-light fw-light">Lastname:</th>
-            <td id="profileLast" class="col table-light fw-bold">Ivanovs</td>
+            <td id="profileLast" class="col table-light fw-bold"><?php echo $_SESSION["user"]["lastname"] ?></td>
         </tr>
         <tr class="row m-auto ">
             <th class="col table-light  fw-light">Email:</th>
-            <td id="profileEmail" class="col table-light fw-bold">ivans.ivanovs@gmail.com</td>
+            <td id="profileEmail" class="col table-light fw-bold"><?php echo $_SESSION["user"]["email"] ?></td>
         </tr>
         <tr class="row m-auto ">
             <th class="col table-light  fw-light">Street:</th>
-            <td id="profileStreet" class="col table-light fw-bold">Ivanova iela</td>
+            <td id="profileStreet" class="col table-light fw-bold"><?php echo $_SESSION["user"]["address"] ?></td>
         </tr>
     </table>
 
