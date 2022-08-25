@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <nav class=" navbar navbar-expand-lg bg-main text-white">
-    <div class="container-fluid">
+  <nav class=" navbar navbar-expand-lg bg-main text-white ">
+    <div class="container-fluid ms-3">
       <a class="navbar-brand p-0 d-flex align-center" href="http://localhost:8000/">
         <img src="../assets/images/logoW.svg" alt="" width="" height="40" class="d-inline-block align-text-top">
       </a>
@@ -19,8 +19,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav text-center">
+    <div class="collapse navbar-collapse me-3" id="navbarNavDropdown">
+      <ul class="navbar-nav text-center d-flex gap-3 justify-content-center align-items-center">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost:8000/">Home</a>
         </li>
