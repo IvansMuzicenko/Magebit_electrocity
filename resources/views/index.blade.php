@@ -59,9 +59,9 @@ require_once "./templates/header.php";
         <div class="carousel-item sanja active">
             <div class="carousel-item-wrapper d-flex">
                 <a href="#" class="card catalogue-index-card-template">
-                    <div style="width: 18rem; height:18rem;">
-                        <img src="" class="card-img-top" alt="...">
-                        <div class="card-body">
+                    <div class="m-auto" style="width: 100%;">
+                        <img src="" class=" m-auto" alt="...">
+                        <div class="card-body text-center">
                             <p class="card-text"></p>
                         </div>
                     </div>
@@ -117,11 +117,11 @@ require_once "./templates/header.php";
                 const newItem = document.createElement("a");
                 newItem.href = "catalogue/" + item.id;
                 newItem.classList.add("card");
-                newItem.style = "width: 18rem; height: 18rem;";
+                newItem.style = "width: 20rem; height: 20rem;";
                 newItem.innerHTML = catalogueItemTemplate.innerHTML;
                 newItem.querySelector("img").src = item.img1;
                 newItem.querySelector("img").style =
-                    "width: 100%; height: 100%; object-fit:contain;";
+                    "max-width: 20rem; width: 100%; height: 10rem; object-fit:contain;";
                 newItem.querySelector(".card-text").textContent =
                     item.brand + " " + item.model + " " + "€" + item.price;
 
