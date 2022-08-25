@@ -95,11 +95,10 @@ require_once "./templates/header.php"
 
 		document.querySelector(".no-products").classList.add("visually-hidden")
 	}
-	getAll()
+	getAll();
 
-	const filterFunction = function(event) {
-		event.preventDefault();
 
+	const filterFunction = function() {
 		let data = new FormData();
 		data.set("type", document.querySelector(".filter_type").value);
 		data.set("brand", document.querySelector(".filter_brand").value);
@@ -113,6 +112,20 @@ require_once "./templates/header.php"
 		}).then(response => response.json()).then(data => {
 			displayItems(data.data);
 		})
+	}
+	if (location.search.length) {
+		let query = location.search;
+		query = query.replace("?", "");
+		let queryArr = query.split("&");
+		let queryFilters = {};
+		queryArr.forEach(el => {
+			let splitEl = el.split("=");
+			queryFilters[splitEl[0]] = splitEl[1];
+		})
+		for (let [filter, value] of Object.entries(queryFilters)) {
+			document.querySelector(".filter_" + filter).value = value;
+		}
+		filterFunction();
 	}
 
 	document.querySelector(".clear_filter").onclick = function(event) {
