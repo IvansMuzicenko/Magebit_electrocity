@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder {
             "M908"
         ];
         $mouseColor = [
-            "Blue",
+            "Colored",
             "Black",
             "Black",
             "Black",
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder {
             "Black",
             "Black",
             "White",
-            "Yellow",
+            "Colored",
             "White",
             "Black",
             "Black",
@@ -223,12 +223,12 @@ class DatabaseSeeder extends Seeder {
             "Black",
             "Black",
             "Black",
-            "Green",
+            "Colored",
             "Black",
             "Black",
             "Black",
             "Black",
-            "Yellow",
+            "Colored",
             "Black",
         ];
         $keyboardConn = [
@@ -348,15 +348,15 @@ class DatabaseSeeder extends Seeder {
         $headsetColor = [
             "White",
             "Black",
-            "Green",
+            "Colored",
             "Black",
             "Black",
             "Black",
             "Black",
             "Black",
             "Black",
-            "Blue",
-            "Grey",
+            "Colored",
+            "Colored",
         ];
         $headsetConn = [
             "Wireless",
