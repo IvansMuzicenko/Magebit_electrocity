@@ -69,7 +69,7 @@ require_once "./templates/header.php";
     data.set("img1", document.querySelector("[name='product_img1']").value);
     data.set("img2", document.querySelector("[name='product_img2']").value);
     data.set("img3", document.querySelector("[name='product_img3']").value);
-    fetch("api/addProduct", {
+    fetch("http://localhost:8000/api/addProduct", {
       method: "POST",
       body: data,
     }).then(response => response.json()).then(data => {

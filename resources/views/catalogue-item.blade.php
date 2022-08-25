@@ -47,7 +47,7 @@ require_once "./templates/header.php"
 <script>
   const productId = location.pathname.split("/")[2];
 
-  fetch("/api/getProductById/" + productId)
+  fetch("http://localhost:8000/api/getProductById/" + productId)
     .then(async response =>
       await response.json())
     .then((data) => {

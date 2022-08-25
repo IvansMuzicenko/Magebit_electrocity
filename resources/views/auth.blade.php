@@ -106,7 +106,7 @@ require_once "./templates/header.php"
     data.set("email", emailValue);
     data.set("password", passValue);
     data.set("confirmPassword", confirmPassValue);
-    fetch("api/auth/register", {
+    fetch("http://localhost:8000/api/auth/register", {
       method: "POST",
       body: data,
     }).then(response => response.json()).then(data => {
@@ -128,7 +128,7 @@ require_once "./templates/header.php"
     const data = new FormData();
     data.set("email", emailValue);
     data.set("password", passValue);
-    fetch("api/auth/login", {
+    fetch("http://localhost:8000/api/auth/login", {
       method: "POST",
       body: data,
     }).then(response => response.json()).then(data => {

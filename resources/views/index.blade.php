@@ -13,7 +13,7 @@ require_once "./templates/header.php";
     <div class="carousel-inner">
         <div class="carousel-item active">
             <a href="http://localhost:8000/catalogue">
-                <img src="../assets/images/banner1.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+                <img src="http://localhost:8000/assets/images/banner1.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
 
                 <div id="textBg" class="carousel-caption d-none d-md-block">
                     <p class="h1 fw-light">Welcome to ELECTROCITY</p>
@@ -23,7 +23,7 @@ require_once "./templates/header.php";
         </div>
         <div class="carousel-item">
             <a href="http://localhost:8000/catalogue?brand=Logitech">
-                <img src="../assets/images/banner2.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+                <img src="http://localhost:8000/assets/images/banner2.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
 
                 <div class="carousel-caption d-none d-md-block">
                     <p class="h1 fw-light">logitech x electroCity</p>
@@ -33,7 +33,7 @@ require_once "./templates/header.php";
         </div>
         <div class="carousel-item">
             <a href="http://localhost:8000/catalogue?brand=Razer">
-                <img src="../assets/images/banner3.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+                <img src="http://localhost:8000/assets/images/banner3.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
 
                 <div class="carousel-caption d-none d-md-block">
                     <p class="h1 fw-light">razer x electroCity</p>
@@ -80,25 +80,24 @@ require_once "./templates/header.php";
     </div>
 </div>
 <div class="d-flex justify-content-center mt-3">
-    <a href="catalogue" type="submit" class="btn btn-primary btn-lg mb-5 catalogue-btn">Catalogue</a>
+    <a href="http://localhost:8000/catalogue" type="submit" class="btn btn-primary btn-lg mb-5 catalogue-btn">Catalogue</a>
 </div>
 
 <div class="category">
     <a href="http://localhost:8000/catalogue?type=Mouse">
-        <img src="../assets/images/categorieMouses.svg" alt="">
+        <img src="http://localhost:8000/assets/images/categorieMouses.svg" alt="">
     </a>
     <a href="http://localhost:8000/catalogue?type=Keyboard">
-        <img src="../assets/images/categorieKeyboards.svg" alt="">
+        <img src="http://localhost:8000/assets/images/categorieKeyboards.svg" alt="">
     </a>
     <a href="http://localhost:8000/catalogue?type=Headset">
-        <img src="../assets/images/categorieHeadsets.svg" class="mb-3"alt="">
+        <img src="http://localhost:8000/assets/images/categorieHeadsets.svg" class="mb-3" alt="">
     </a>
 </div>
 
 
 <script>
-    
-    fetch("api/getAllProducts")
+    fetch("http://localhost:8000/api/getAllProducts")
         .then((response) => response.json())
         .then((data) => {
             const catalogueIndex = document.querySelector(".catalogue-index");
@@ -110,18 +109,18 @@ require_once "./templates/header.php";
             let appendTarget
             console.log(window.innerWidth);
 
-          
-                if (window.innerWidth > 1000) {
+
+            if (window.innerWidth > 1000) {
                 appendTarget = document.querySelectorAll('.carousel-item-wrapper');
-                
+
             } else {
                 appendTarget = document.querySelectorAll('.catalogue-index')
             }
-            
-            
 
 
-     
+
+
+
 
 
             for (let item of data.data) {
@@ -136,7 +135,7 @@ require_once "./templates/header.php";
                     "max-width: 20rem; width: 100%; height: 10rem; object-fit:contain;";
                 newItem.querySelector(".card-text").textContent =
                     item.brand + " " + item.model + " " + "€" + item.price;
-    
+
 
                 let n = 0;
                 console.log(appendTarget.length);

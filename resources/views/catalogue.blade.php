@@ -47,7 +47,7 @@ require_once "./templates/header.php"
 
 
 <script>
-	fetch("api/getAllProducts")
+	fetch("http://localhost:8000/api/getAllProducts")
 		.then(async (response) => await response.json())
 		.then((data) => {
 			let res = data.data;
@@ -143,7 +143,7 @@ require_once "./templates/header.php"
 
 	}
 	const getAll = function() {
-		fetch("api/getAllProducts")
+		fetch("http://localhost:8000/api/getAllProducts")
 			.then((response) => response.json())
 			.then((data) => {
 				displayItems(data.data)
@@ -162,7 +162,7 @@ require_once "./templates/header.php"
 		data.set("connection", document.querySelector(".filter_connection").value);
 		data.set("sort", document.querySelector(".sort").value);
 
-		fetch("api/getFilteredProducts", {
+		fetch("http://localhost:8000/api/getFilteredProducts", {
 			method: "POST",
 			body: data,
 		}).then(response => response.json()).then(data => {
