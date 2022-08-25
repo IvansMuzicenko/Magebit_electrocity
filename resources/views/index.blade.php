@@ -12,7 +12,7 @@ require_once "./templates/header.php";
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a href="catalogue/">
+            <a href="http://localhost:8000/catalogue">
                 <img src="../assets/images/banner1.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
 
                 <div id="textBg" class="carousel-caption d-none d-md-block">
@@ -22,7 +22,7 @@ require_once "./templates/header.php";
             </a>
         </div>
         <div class="carousel-item">
-            <a href="catalogue?brand=Logitech">
+            <a href="http://localhost:8000/catalogue?brand=Logitech">
                 <img src="../assets/images/banner2.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
 
                 <div class="carousel-caption d-none d-md-block">
@@ -32,7 +32,7 @@ require_once "./templates/header.php";
             </a>
         </div>
         <div class="carousel-item">
-            <a href="catalogue?brand=Razer">
+            <a href="http://localhost:8000/catalogue?brand=Razer">
                 <img src="../assets/images/banner3.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
 
                 <div class="carousel-caption d-none d-md-block">
@@ -65,13 +65,13 @@ require_once "./templates/header.php";
 </div>
 
 <div class="categorie">
-    <a href="catalogue?type=Mouse">
+    <a href="http://localhost:8000/catalogue?type=Mouse">
         <img src="../assets/images/categorieMouses.svg" alt="">
     </a>
-    <a href="catalogue?type=Keyboard">
+    <a href="http://localhost:8000/catalogue?type=Keyboard">
         <img src="../assets/images/categorieKeyboards.svg" alt="">
     </a>
-    <a href="catalogue?type=Headset">
+    <a href="http://localhost:8000/catalogue?type=Headset">
         <img src="../assets/images/categorieHeadsets.svg" alt="">
     </a>
 </div>
