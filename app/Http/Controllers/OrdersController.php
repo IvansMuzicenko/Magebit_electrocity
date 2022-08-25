@@ -39,11 +39,10 @@ class OrdersController extends BaseController {
         return true;
     }
 
-    public function getOrdersById() {
-        $customer_id = $_POST["customer_id"];
+    public function getOrdersById($id) {
         return response()->json([
-            "status" => true,
-            "data" => Products::where("customer_id", $customer_id)->get()
+            "status" =>  true,
+            "data" => DB::table('orders')->where("customer_id", $id)->join("products", "orders.product_id", "=", "products.id")->select("products.brand", "products.model", "products.img1", "products.price", "orders.amount", "orders.product_id", "orders.order_date")->get()
         ], 200);
     }
 }

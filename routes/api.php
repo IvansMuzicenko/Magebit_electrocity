@@ -32,4 +32,4 @@ Route::post("auth/login", [AuthController::class, "login"]);
 Route::get("auth/logout", [AuthController::class, "logout"]);
 
 Route::post("orders/placeOrder", [OrdersController::class, "placeOrder"]);
-Route::post("orders/getOrdersById", [OrdersController::class, "getOrdersById"]);
+Route::get("orders/getOrdersById/{id}", [OrdersController::class, "getOrdersById"]);
