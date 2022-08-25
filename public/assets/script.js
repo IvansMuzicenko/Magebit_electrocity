@@ -1,7 +1,14 @@
+const productId = location.pathname.split("/")[2];
+
+if (localStorage.getItem("cart") == null) {
+    localStorage.setItem("cart", JSON.stringify({}));
+}
+
 const deleteFromCart = function (productId) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     delete cart[productId];
     localStorage.setItem("cart", JSON.stringify(cart));
+    fillCart();
 };
 const changeProductAmount = function (productId, newAmount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -49,3 +56,19 @@ const fillCart = function () {
     }
 };
 fillCart();
+
+//from product-item page
+
+const addToCart = function (event, productId) {
+    const amount = document.querySelector(".amount").value;
+
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    cart[productId] = cart[productId]
+        ? Number(cart[productId]) + Number(amount)
+        : Number(amount);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    fillCart();
+};
+document.querySelector(".add-to-cart").onclick = () =>
+    addToCart(event, productId);

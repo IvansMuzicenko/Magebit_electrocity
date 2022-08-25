@@ -47,19 +47,6 @@ require_once "./templates/header.php"
 <script>
   const productId = location.pathname.split("/")[2];
 
-  const addToCart = function(event, productId) {
-    if (localStorage.getItem("cart") == null) {
-      localStorage.setItem("cart", JSON.stringify({}));
-    }
-    const amount = document.querySelector(".amount").value;
-
-    let cart = JSON.parse(localStorage.getItem("cart"));
-
-    cart[productId] = cart[productId] ? Number(cart[productId]) + Number(amount) : Number(amount);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  };
-  document.querySelector(".add-to-cart").onclick = () => addToCart(event, productId);
-
   fetch("/api/getProductById/" + productId)
     .then(async response =>
       await response.json())
