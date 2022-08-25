@@ -6,13 +6,13 @@ require_once "./templates/header.php"
   <div id="productCarousel" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="..." class="img1 img-fluid" alt="...">
+        <img src="" class="img1 img-fluid" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="..." class="img2 img-fluid" alt="...">
+        <img src="" class="img2 img-fluid" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="..." class="img3 img-fluid" alt="...">
+        <img src="" class="img3 img-fluid" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">

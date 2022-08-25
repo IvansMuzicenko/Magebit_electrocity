@@ -44,7 +44,7 @@ require_once "./templates/header.php";
 
     <a href="#" class="card catalogue-index-card-template" style="width: 18rem;">
         <div>
-            <img src="..." class="card-img-top" alt="...">
+            <img src="" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text"></p>
             </div>
@@ -57,7 +57,7 @@ require_once "./templates/header.php";
 
 <div class="categorie">
     <a href="catalogue?type=Mouse">
-        <img src="../assets/images/categorieMouses.svg"  alt="">
+        <img src="../assets/images/categorieMouses.svg" alt="">
     </a>
     <a href="catalogue?filter_type=Keyboard">
         <img src="../assets/images/categorieKeyboards.svg" alt="">

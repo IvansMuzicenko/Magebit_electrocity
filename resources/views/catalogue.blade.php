@@ -12,12 +12,12 @@ require_once "./templates/header.php"
 			<option value="*" selected>Product type</option>
 			<option value="Mouse">Mouse</option>
 			<option value="Keyboard">Keyboard</option>
-			<option value="Headsets">Headsets</option>
+			<option value="Headset">Headset</option>
 		</select>
 		<select class="form-select filter_select filter_brand" style="width: 10rem;" aria-label="Default select example">
 			<option value="*" selected>Brand</option>
 			<option value="Logitech">Logitech</option>
-			<option value="Steel Series">Steel Series</option>
+			<option value="Steelseries">Steelseries</option>
 			<option value="Dell">Dell</option>
 			<option value="Razer">Razer</option>
 			<option value="Corsair">Corsair</option>
@@ -37,15 +37,17 @@ require_once "./templates/header.php"
 		</select>
 		<button class="btn clear_filter">Clear filter</button>
 		<select class="form-select sort" name="sort">
+			<option value="" selected>Sort</option>
 			<option value="asc">From lower to higher</option>
-			<option value="desc" selected>From higher to lower</option>
+			<option value="desc">From higher to lower</option>
 		</select>
 	</form>
 
+	<p class="w-100 my-5 fs-5 text-center visually-hidden no-products">No products found</p>
 	<div class="catalogue row m-0 d-flex justify-content-center gap-2 mb-5 pb-2 pt-5 mt-3">
 		<a href="" class="card catalogue-card-template" hidden style="width: 18rem;">
 			<div>
-				<img src="..." class="card-img-top" alt="...">
+				<img src="" class="card-img-top" alt="...">
 				<div class="card-body">
 					<p class="card-text"></p>
 				</div>
@@ -57,12 +59,17 @@ require_once "./templates/header.php"
 
 <script>
 	const displayItems = function(items) {
-
 		const catalogue = document.querySelector(".catalogue");
 		const catalogueItemTemplate = document.querySelector(
 			".catalogue-card-template"
 		);
 		catalogue.innerHTML = catalogueItemTemplate.outerHTML;
+		if (!items.length) {
+			document.querySelector(".no-products").classList.remove("visually-hidden");
+			return;
+		} else {
+			document.querySelector(".no-products").classList.add("visually-hidden")
+		}
 		for (let item of items) {
 			const newItem = document.createElement("a");
 			newItem.href = "catalogue/" + item.id;
@@ -79,11 +86,16 @@ require_once "./templates/header.php"
 		}
 
 	}
-	fetch("api/getAllProducts")
-		.then((response) => response.json())
-		.then((data) => {
-			displayItems(data.data)
-		});
+	const getAll = function() {
+		fetch("api/getAllProducts")
+			.then((response) => response.json())
+			.then((data) => {
+				displayItems(data.data)
+			});
+
+		document.querySelector(".no-products").classList.add("visually-hidden")
+	}
+	getAll()
 
 	const filterFunction = function(event) {
 		event.preventDefault();
@@ -109,7 +121,8 @@ require_once "./templates/header.php"
 		document.querySelector(".filter_brand").value = "*";
 		document.querySelector(".filter_color").value = "*";
 		document.querySelector(".filter_connection").value = "*";
-		filterFunction(event);
+		document.querySelector(".sort").value = "";
+		getAll(event);
 	}
 
 	document.querySelectorAll(".filter_select").forEach(select => {

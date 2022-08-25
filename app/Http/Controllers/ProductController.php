@@ -46,9 +46,12 @@ class ProductController extends BaseController {
             array_push($filterArray, ["connection", $connection]);
         }
         $query = DB::table('products')->where($filterArray);
+        if ($sort != "") {
+            $query = $query->orderBy('price', $sort);
+        }
         return response()->json([
             "status" => true,
-            "data" => $query->orderBy('price', $sort)->get()
+            "data" => $query->get()
         ], 200);
     }
     public function getProductById($id) {
