@@ -30,51 +30,24 @@ require_once "./templates/header.php"
 
   <!-- HISTORY -->
   <p class="h1 text-center m-5 mb-2">Purchases</p>
-  <div class="list-group ">
+  <div class="list-group history">
 
-    <a href="catalogue/1" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between " aria-current="true">
+    <a href="" class="history-item-template list-group-item list-group-item-action d-flex align-items-center justify-content-between ">
       <div id="cartItems" class="container d-flex">
-        <img id="cartImg" class="rounded" src="https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg" alt="">
-        <p id="cartText" class="fs-5 fw-bold">Logitech</p>
-        <p id="cartText" class="fs-5 fw-bold">G201</p>
-        <p id="cartText" class="fs-5 fw-light">20,99 €</p>
+        <img id="cartImg" class="history-item-img rounded" src="" alt="">
+        <p id="cartText" class="history-item-brand fs-5 fw-bold"></p>
+        <p id="cartText" class="history-item-model fs-5 fw-bold"></p>
+        <p id="cartText" class="history-item-price fs-5 fw-light"></p>
       </div>
-      <p id="status" class="fs-5 fw-bold m-0">Ready</p>
+      <p class="history-item-status fs-5 fw-bold m-0">Ready</p>
     </a>
 
-
-    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between " aria-current="true">
-      <div id="cartItems" class="container d-flex">
-        <img id="cartImg" class="rounded" src="https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg" alt="">
-        <p id="cartText" class="fs-5 fw-bold">Logitech</p>
-        <p id="cartText" class="fs-5 fw-bold">G201</p>
-        <p id="cartText" class="fs-5 fw-light">20,99 €</p>
-      </div>
-      <p id="status" class="fs-5 fw-bold m-0">Ready</p>
-    </a>
-
-    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between " aria-current="true">
-      <div id="cartItems" class="container d-flex">
-        <img id="cartImg" class="rounded" src="https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg" alt="">
-        <p id="cartText" class="fs-5 fw-bold">Logitech</p>
-        <p id="cartText" class="fs-5 fw-bold">G201</p>
-        <p id="cartText" class="fs-5 fw-light">20,99 €</p>
-      </div>
-      <p id="status" class="fs-5 fw-bold m-0">Ready</p>
-    </a>
-
-    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between " aria-current="true">
-      <div id="cartItems" class="container d-flex">
-        <img id="cartImg" class="rounded" src="https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg" alt="">
-        <p id="cartText" class="fs-5 fw-bold">Logitech</p>
-        <p id="cartText" class="fs-5 fw-bold">G201</p>
-        <p id="cartText" class="fs-5 fw-light">20,99 €</p>
-      </div>
-      <p id="status" class="fs-5 fw-bold m-0">Ready</p>
-    </a>
   </div>
 </div>
 
+<script>
+  //TODO history fetch and display data
+</script>
 
 
 
