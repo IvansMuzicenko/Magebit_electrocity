@@ -1,20 +1,39 @@
 const productId = location.pathname.split("/")[2];
 let addingProduct = document.querySelectorAll(".adding-product");
 
+let totalPrice = 0;
+
 if (localStorage.getItem("cart") == null) {
     localStorage.setItem("cart", JSON.stringify({}));
 }
+
+const calcTotal = function (value) {
+    totalPrice += value;
+    getTotal(totalPrice);
+};
+
+const resetTotal = function () {
+    totalPrice = 0;
+};
+const getTotal = function (totalPrice) {
+    document.querySelectorAll(".cart-total").forEach((total) => {
+        total.textContent = "€" + totalPrice;
+    });
+};
 
 const deleteFromCart = function (productId) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     delete cart[productId];
     localStorage.setItem("cart", JSON.stringify(cart));
+    resetTotal();
     fillCart();
 };
 const changeProductAmount = function (productId, newAmount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     cart[productId] = newAmount;
     localStorage.setItem("cart", JSON.stringify(cart));
+    resetTotal();
+    fillCart();
 };
 const fillCart = function () {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -23,6 +42,10 @@ const fillCart = function () {
     const cartPageField = document.querySelector(".cart-list");
 
     cartField.innerHTML = cartItemTemplate.outerHTML;
+    if (cartPageField) {
+        cartPageField.innerHTML = cartItemTemplate.outerHTML;
+    }
+
     //fill cart after cart change
 
     for (let productId of Object.keys(cart)) {
@@ -53,11 +76,16 @@ const fillCart = function () {
 
                 newItem.querySelector(".cart-item-remove").onclick = () =>
                     deleteFromCart(productId);
-                let newItemCopy = newItem;
+
+                let newItemCopy = document.createElement("div");
+                newItemCopy.innerHTML = newItem.innerHTML;
+                newItemCopy.className =
+                    "cart-item-bg bg-secondary d-flex mb-3 justify-content-between align-items-center";
                 cartField.append(newItem);
                 if (cartPageField) {
                     cartPageField.append(newItemCopy);
                 }
+                calcTotal(cart[productId] * dbItem["price"]);
             });
     }
 };
@@ -75,6 +103,7 @@ const addToCart = function (productId, amount) {
         return;
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+    resetTotal();
     fillCart();
 };
 

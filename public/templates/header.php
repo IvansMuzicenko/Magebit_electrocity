@@ -76,7 +76,10 @@
     </div>
 
 
-    <a href="http://localhost:8000/cart" class="d-flex justify-content-center mt-5 mb-5" style="text-decoration:none">
+    <p class="w-100 text-center">
+      Total: <span class="cart-total"></span>
+    </p>
+    <a href="http://localhost:8000/cart" class="d-flex justify-content-center mt-2 mb-5" style="text-decoration:none">
       <button class="btn btn-primary btn-lg">View your cart</button>
     </a>
   </div>
