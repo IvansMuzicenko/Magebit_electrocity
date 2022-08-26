@@ -142,6 +142,7 @@ require_once "./templates/header.php"
 				interval();
 
 			}
+
 			catalogue.append(newItem);
 		}
 		localStorage.setItem("loader", JSON.stringify(false))
