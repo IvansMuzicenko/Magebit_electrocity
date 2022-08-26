@@ -38,7 +38,7 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"])) {
 
     <a href="" class="history-item-template">
       <div id="cartItems" class="container d-flex flex-lg-row flex-column align-items-center justify-content-lg-between">
-        <img id="cartImg" class="history-item-img rounded" src="">
+        <img id="cartImg" class="history-item-img rounded" style="object-fit:contain;" src="">
         <p id="cartText" class="history-item-brand fs-5 fw-bold"></p>
         <p id="cartText" class="history-item-price fs-5 fw-light"></p>
         <p id="cartText" class="history-item-total fs-5 fw-light"></p>

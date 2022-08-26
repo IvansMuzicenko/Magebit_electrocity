@@ -135,8 +135,8 @@ require_once "./templates/header.php"
 			newItem.querySelector("img").style =
 				"height: 200px; object-fit:contain;";
 			newItem.querySelector(".add-to-cart-btn").dataset['id'] = item.id;
-			newItem.querySelector(".card-text").textContent =
-				item.brand + " " + item.model + " " + "€" + item.price;
+			newItem.querySelector(".card-text").innerHTML =
+				item.brand + " " + item.model + "<br>" + "€" + item.price;
 
 			catalogue.append(newItem);
 		}
