@@ -47,6 +47,7 @@ require_once "./templates/header.php"
 
 
 <script>
+	<?php require_once "./assets/script.js" ?>
 	fetch("http://localhost:8000/api/getAllProducts")
 		.then(async (response) => await response.json())
 		.then((data) => {
@@ -137,7 +138,10 @@ require_once "./templates/header.php"
 			newItem.querySelector(".add-to-cart-btn").dataset['id'] = item.id;
 			newItem.querySelector(".card-text").innerHTML =
 				item.brand + " " + item.model + "<br>" + "€" + item.price;
+			newItem.querySelector(".add-to-cart-btn").onclick = function() {
+				interval();
 
+			}
 			catalogue.append(newItem);
 		}
 		localStorage.setItem("loader", JSON.stringify(false))
