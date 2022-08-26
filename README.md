@@ -46,3 +46,15 @@ Button (green) - Emerald - #51CF66
 
 Main Color - Royal Blue Light - #3B5BDB
 Secondary - Majorelle blue -  #7048E8
+
+<<<<<<< dev
+
+.env file DB_PORT is 3300 !!!!
+
+db usage https://laravel.com/docs/9.x/eloquent#retrieving-or-creating-models
+
+for db create use terminal command: php artisan migrate <br>
+for db seeds creation use terminal command: php artisan migrate:fresh --seed (or php artisan db:seed --force   if seeds already exists)
+=======
+>>>>>>> master
+

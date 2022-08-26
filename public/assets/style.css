@@ -1,0 +1,125 @@
+@import "./styles/404.css";
+@import "./styles/auth.css";
+@import "./styles/catalogue-item.css";
+@import "./styles/catalogue.css";
+@import "./styles/index.css";
+@import "./styles/profile.css";
+@import "./styles/cart.css";
+@import "./styles/header.css";
+
+* {
+    font-family: "Montserrat";
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+html {
+    position: relative;
+}
+html,
+body {
+    background: #edf2ff;
+    overflow-x: hidden;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.wrapper {
+    width: 100vw;
+    padding: 0 10%;
+}
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 1px !important;
+    }
+}
+footer {
+    margin: 0 !important;
+}
+.bg-primary {
+    background: #edf2ff !important;
+}
+.bg-secondary {
+    background: #dbe4ff !important;
+}
+.bg-main {
+    background: #3b5bdb;
+}
+.navbar * {
+    color: white !important;
+}
+.btn {
+    background: #51cf66;
+    color: white;
+    border: none;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background: #37b24d;
+    color: white;
+    border: none;
+}
+.nav-link {
+    cursor: pointer;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: light;
+    src: url("fonts/Montserrat-Light.ttf");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: bold;
+    src: url("fonts/Montserrat-Medium.ttf");
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000000000000000;
+    background: #3b5bdb71;
+    backdrop-filter: blur(40px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.loader > .loader-wrapper {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader-wrapper > img {
+    width: 90vw;
+    animation: loader 5s infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+.added {
+    transform: scale(1.1);
+    background: #37b24d;
+}

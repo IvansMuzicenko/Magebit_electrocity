@@ -1,0 +1,52 @@
+#carouselBanner {
+    width: 100vw;
+    margin-left: -10vw;
+}
+@media screen and (max-width: 768px) {
+    #carouselBanner {
+        margin: 0;
+    }
+}
+.carousel-item {
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    width: 100%;
+
+    background: rgb(0, 0, 0, 0.2);
+    color: #000;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+#carouselBanner:hover .carousel-caption {
+    color: #fff;
+    transition: 0.5s;
+    background: rgb(0, 0, 0, 0.9);
+}
+
+.category img {
+    border-radius: 10px;
+    margin: 5px;
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.sanja {
+    transition: linear;
+    transition-duration: 15s;
+}
+
+@media screen and (max-width: 700px) {
+
+#carousel .card-text{
+    font-size: 14px;
+   
+}
+
+}

@@ -19,8 +19,14 @@ Route::get('/', function () {
 Route::get('/catalogue', function () {
     return view('catalogue');
 });
-Route::get('/catalogue/{id}}', function () {
+Route::get('/catalogue/{id}', function () {
     return view('catalogue-item');
+});
+Route::get('/product-add', function () {
+    return view('product-add');
+});
+Route::get('/cart', function () {
+    return view('cart');
 });
 Route::get('/profile', function () {
     return view('profile');

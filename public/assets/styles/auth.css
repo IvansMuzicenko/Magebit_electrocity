@@ -1,0 +1,12 @@
+.signIn .bg-secondary,
+.signUp .bg-secondary {
+    border-radius: 20px;
+}
+
+#signUpLink,
+#signInLink {
+    color: blue;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
