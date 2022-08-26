@@ -9,6 +9,7 @@ require_once "./templates/header.php";
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -38,6 +39,16 @@ require_once "./templates/header.php";
                 <div class="carousel-caption d-none d-md-block">
                     <p class="h1 fw-light">razer x electroCity</p>
                     <p>"For gamers by gamers." devices can find in our e-shop</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item ">
+            <a href="http://localhost:8000/catalogue?color=Black&type=Mouse">
+                <img src="http://localhost:8000/assets/images/banner4.svg" class="" style="width:100%; height:auto" alt="...">
+
+                <div id="textBg" class="carousel-caption d-none d-md-block">
+                    <p class="h1 fw-light">Our choice</p>
+                    <p class="fs-5">Black edition mouses</p>
                 </div>
             </a>
         </div>
@@ -84,6 +95,19 @@ require_once "./templates/header.php";
 </div>
 
 <!-- CATEGORY -->
+<div class="categoryBrands d-flex justify-content-evenly flex-wrap ">
+    <a href="http://localhost:8000/catalogue?brand=Razer" class="mb-1">
+        <img src="http://localhost:8000/assets/images/cardRazer.svg" alt="">
+    </a>
+    <a href="http://localhost:8000/catalogue?brand=Logitech" class="mb-1">
+        <img src="http://localhost:8000/assets/images/cardLogitech.svg" alt="">
+    </a>
+    <a href="http://localhost:8000/catalogue?brand=Steelseries" class="mb-1">
+        <img src="http://localhost:8000/assets/images/cardSteel.svg" alt="">
+    </a>
+</div>
+
+
 <div class="category">
     <a href="http://localhost:8000/catalogue?type=Mouse">
         <img src="http://localhost:8000/assets/images/categorieMouses.svg" alt="">

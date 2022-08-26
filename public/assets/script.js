@@ -105,7 +105,7 @@ const fillCart = function () {
 };
 fillCart();
 
-//from product-item page
+// TODO filter is breaking item add
 
 const addToCart = function (productId, amount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -134,8 +134,12 @@ const interval = setInterval(() => {
                     product.querySelector(".add-to-cart-amount").value
                 );
                 addBtn.classList.add("added");
+                document.querySelector(".cart-link").classList.add("added");
                 setTimeout(() => {
                     addBtn.classList.remove("added");
+                    document
+                        .querySelector(".cart-link")
+                        .classList.remove("added");
                 }, 1000);
             };
         }

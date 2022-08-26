@@ -39,7 +39,7 @@
         </li>
         <li class="nav-item">
           <!--OFFCANVAS-->
-          <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Cart</a>
+          <a class="nav-link cart-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Cart</a>
           <!--/OFFCANVAS-->
         </li>
         <?php if (isset($_SESSION["user"])) :; ?>
@@ -73,7 +73,7 @@
       <div class="cart-item-template visually-hidden ">
         <a href="" class="cart-item-link w-100 d-flex  justify-content-between align-items-center" aria-current="true">
           <div class="cart-item container d-flex flex-lg-row flex-column justify-content-between align-items-center">
-            <img class="cart-item-img rounded" src="" alt="">
+            <img class="cart-item-img rounded" style="object-fit:contain; max-width:5rem; width:100%; max-height:5rem; " src="" alt="">
             <p class="cart-item-brand fs-6 fw-bold mt-auto mb-auto p-1"></p>
             <p class="cart-item-model fs-6 fw-light mt-auto mb-auto"></p>
             <p class="cart-item-price fs-6 fw-bold mt-auto mb-auto p-3"></p>

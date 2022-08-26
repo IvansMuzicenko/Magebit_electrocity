@@ -3,7 +3,7 @@ require_once "./templates/header.php"
 ?>
 
 <div class="page d-flex flex-column justify-content-center">
-  <h2 class="mt-3"> ERROR 404 !! Your page could not be loaded! Play a game meanwhile?!</h2>
+  <h2 class="mt-3 text-center fs-3"> ERROR 404 !! Your page could not be loaded! Play a game meanwhile?!</h2>
   <div class="game">
     <h1 class="game__results"></h1>
     <h1>Player <span class="game__turn">1</span> turn</h1>
@@ -18,6 +18,9 @@ require_once "./templates/header.php"
   </div>
 </div>
 <script>
+  window.onload = () => {
+    localStorage.setItem("loader", JSON.stringify(false));
+  }
   const area = document.querySelector(".game__area");
   const results = document.querySelector(".game__results");
   const turn = document.querySelector(".game__turn");
