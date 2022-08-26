@@ -66,6 +66,9 @@ const fillCart = function () {
             localStorage.setItem("cartLoader", JSON.stringify(false));
             return;
         }
+        if (cartField.innerHTML.includes("catalogue/" + productId)) {
+            return;
+        }
         fetch("http://localhost:8000/api/getProductById/" + productId)
             .then((response) => response.json())
             .then((data) => {
@@ -107,6 +110,7 @@ const fillCart = function () {
                         deleteFromCart(productId);
                     cartPageField.append(cloneItem);
                 }
+
                 cartField.append(newItem);
                 calcTotal(cart[productId] * dbItem["price"]);
             });
@@ -114,8 +118,6 @@ const fillCart = function () {
     localStorage.setItem("cartLoader", JSON.stringify(false));
 };
 fillCart();
-
-// TODO filter is breaking item add
 
 const addToCart = function (productId, amount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
