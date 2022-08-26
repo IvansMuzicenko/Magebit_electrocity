@@ -39,7 +39,7 @@
         </li>
         <li class="nav-item">
           <!--OFFCANVAS-->
-          <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Cart</a>
+          <a class="nav-link cart-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Cart</a>
           <!--/OFFCANVAS-->
         </li>
         <?php if (isset($_SESSION["user"])) :; ?>
