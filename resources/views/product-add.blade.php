@@ -26,20 +26,20 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"]) || $_SESSION["u
       <option value="Headset">Headset</option>
     </select>
 
-    <input type="text" name="product_brand" id="add-brand" style="max-width: 15rem; width:100%" class="form-control" placeholder="Brand name">
+    <input type="text" name="product_brand" id="add-brand" style="max-width: 15rem; width:100%" class="product_brand form-control" placeholder="Brand name">
 
-    <input type="text" name="product_model" id="add-model" style="max-width: 15rem; width:100%" class="form-control" placeholder="Model name">
+    <input type="text" name="product_model" id="add-model" style="max-width: 15rem; width:100%" class="product_model form-control" placeholder="Model name">
 
-    <input type="text" name="product_color" id="add-color" style="max-width: 15rem; width:100%;" class="form-control" placeholder="Color">
+    <input type="text" name="product_color" id="add-color" style="max-width: 15rem; width:100%;" class="product_color form-control" placeholder="Color">
 
-    <select name="product_connection" id="add-connection" style="max-width: 15rem; width:100%" class="form-select">
+    <select name="product_connection" id="add-connection" style="max-width: 15rem; width:100%" class="product_connection form-select">
       <option selected>Connection</option>
       <option value="Usb">USB</option>
       <option value="Wireless">Wireless</option>
       <option value="3.5mm">3.5mm</option>
     </select>
 
-    <input type="number" name="product_price" id="add-price" style="max-width: 15rem; width:100%" class="form-control" placeholder="Price">
+    <input type="number" name="product_price" id="add-price" style="max-width: 15rem; width:100%" class="product_price form-control" placeholder="Price">
 
     <div class="d-flex w-100 justify-content-evenly method-select">
       <div>
@@ -53,13 +53,13 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"]) || $_SESSION["u
     </div>
 
     <div class="url-images">
-      <input type="text" name="product_img1" id="add-img_1" style="max-width: 15rem; width:100%" class="form-control" placeholder="Picture 1">
-      <input type="text" name="product_img2" id="add-img_2" style="max-width: 15rem; width:100%" class="form-control" placeholder="Picture 2">
-      <input type="text" name="product_img3" id="add-img_3" style="max-width: 15rem; width:100%" class="form-control" placeholder="Picture 3">
+      <input type="text" name="product_img1" id="add-img_1" style="max-width: 15rem; width:100%" class="product_img1 form-control" placeholder="Picture 1">
+      <input type="text" name="product_img2" id="add-img_2" style="max-width: 15rem; width:100%" class="product_img2 form-control" placeholder="Picture 2">
+      <input type="text" name="product_img3" id="add-img_3" style="max-width: 15rem; width:100%" class="product_img3 form-control" placeholder="Picture 3">
     </div>
 
     <div class="file-images visually-hidden">
-      <input type="file" id="fileImages" name="product_images[]" multiple style="max-width: 15rem; width:100%" class="form-control" placeholder="Pictures">
+      <input type="file" id="fileImages" name="product_images[]" multiple style="max-width: 15rem; width:100%" class="product_file_images form-control" placeholder="Pictures">
     </div>
 
     <button type="submit" class="btn btn-primary btn-lg">Add product</button>
@@ -92,17 +92,29 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"]) || $_SESSION["u
 
   }
 
-
-
-
-
   document.querySelector("form").onsubmit = function(event) {
     event.preventDefault();
 
     const data = new FormData(this);
+    let brand = document.querySelector(".product_brand").value;
+    let model = document.querySelector(".product_model").value;
+    let color = document.querySelector(".product_color").value;
+    let connection = document.querySelector(".product_connection").value;
+    let price = document.querySelector(".product_price").value;
+    let img1 = document.querySelector(".product_img1").value;
+    let img2 = document.querySelector(".product_img2").value;
+    let img3 = document.querySelector(".product_img3").value;
+    let file_images = document.querySelector(".product_file_images");
 
-    if (document.querySelector("#fileImages").files.length > 3) {
-      return
+    if (!brand || !model || !color || !connection || !price) {
+      return alert("Please fill all fields")
+    }
+    if ((!img1 || !img2 || !img3) && document.querySelector("#url-add").checked) {
+      return alert("Please provide 3 images")
+    }
+
+    if (file_images.files.length != 3 && document.querySelector("#file-add").checked) {
+      return alert("Please provide 3 images")
     }
 
     fetch("http://localhost:8000/api/addProduct", {
