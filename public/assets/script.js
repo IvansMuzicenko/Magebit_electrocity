@@ -59,7 +59,7 @@ const fillCart = function () {
                 let newItem = document.createElement("div");
                 newItem.innerHTML = cartItemTemplate.innerHTML;
                 newItem.className =
-                    "cart-item-bg bg-secondary d-flex mb-3 justify-content-between align-items-center";
+                    "cart-item-bg bg-secondary d-flex flex-lg-row flex-column mb-3 justify-content-center align-items-center";
                 newItem.querySelector(".cart-item-link").href =
                     "http://localhost:8000/catalogue/" + productId;
                 newItem.querySelector(".cart-item-img").src = dbItem["img1"];
@@ -81,7 +81,17 @@ const fillCart = function () {
                     deleteFromCart(productId);
 
                 if (cartPageField) {
-                    cartPageField.append(newItem.cloneNode(true));
+                    let cloneItem = newItem.cloneNode(true);
+                    cloneItem.querySelector(".cart-item-amount").onchange =
+                        () =>
+                            changeProductAmount(
+                                productId,
+                                cloneItem.querySelector(".cart-item-amount")
+                                    .value
+                            );
+                    cloneItem.querySelector(".cart-item-remove").onclick = () =>
+                        deleteFromCart(productId);
+                    cartPageField.append(cloneItem);
                 }
                 cartField.append(newItem);
                 calcTotal(cart[productId] * dbItem["price"]);
