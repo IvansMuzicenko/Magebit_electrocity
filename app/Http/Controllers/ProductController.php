@@ -61,15 +61,67 @@ class ProductController extends BaseController {
         ], 200);
     }
     public function addProduct() {
-        $type = $_POST["type"];
-        $brand = $_POST["brand"];
-        $model = $_POST["model"];
-        $color = $_POST["color"];
-        $connection = $_POST["connection"];
-        $price = $_POST["price"];
-        $img1 = $_POST["img1"];
-        $img2 = $_POST["img2"];
-        $img3 = $_POST["img3"];
+        $type = $_POST["product_type"];
+        $brand = $_POST["product_brand"];
+        $model = $_POST["product_model"];
+        $color = $_POST["product_color"];
+        $connection = $_POST["product_connection"];
+        $price = $_POST["product_price"];
+
+        $imagesFile = [];
+
+        if ($_POST["image_type"] == "url") {
+            array_push($imagesFile, $_POST["product_img1"]);
+            array_push($imagesFile, $_POST["product_img2"]);
+            array_push($imagesFile, $_POST["product_img3"]);
+        } else {
+            $groupByEntry = function (&$arr) {
+                $entry = [];
+                $first_value = current($arr);
+                if (is_array($first_value)) {
+                    $count = count($first_value);
+
+                    foreach ($arr as $key => $column_values) {
+                        for ($i = 0; $i < $count; $i++) {
+                            $entry[$i][$key] = $column_values[$i];
+                        };
+                    };
+                    $arr = $entry;
+                } else {
+                    $arr = [$entry];
+                }
+            };
+
+            $target_dir = "/home/ivansmuzicenko/Desktop/Magebit_Bootcamp/Final project/electrocity/storage/app/";
+
+
+            foreach ($_FILES['product_images']['error'] as $error) {
+                if ($error > 0) {
+                    return
+                        response()->json([
+                            "status" => false,
+                            "message" => "No images found",
+                        ], 200);
+                }
+            }
+
+
+            $images = $_FILES['product_images'];
+            $groupByEntry($images);
+            $count = 0;
+            global $data;
+
+            foreach ($images as $image) {
+                $target_file = $target_dir . basename($image['name']);
+                $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                $size = getimagesize($image["tmp_name"]);
+                $file_size = $image['size'];
+
+                $count++;
+                Storage::disk("public")->put($image['name'], file_get_contents($image["tmp_name"]));
+                array_push($imagesFile, asset('storage/' . $image['name']));
+            }
+        }
 
         Products::create([
             "type" => $type,
@@ -78,9 +130,9 @@ class ProductController extends BaseController {
             "color" => $color,
             "connection" => $connection,
             "price" => $price,
-            "img1" => $img1,
-            "img2" => $img2,
-            "img3" => $img3,
+            "img1" => $imagesFile[0],
+            "img2" => $imagesFile[1],
+            "img3" => $imagesFile[2],
         ]);
         return true;
     }
