@@ -105,7 +105,7 @@ const fillCart = function () {
 };
 fillCart();
 
-//from product-item page
+// TODO filter is breaking item add
 
 const addToCart = function (productId, amount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
