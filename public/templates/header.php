@@ -64,16 +64,16 @@
     </div>
 
     <div class="offcanvas-body small-cart-items">
-      <div class="cart-item-template visually-hidden">
-        <a href="" class="cart-item-link w-100 d-flex align-items-center" aria-current="true">
-          <div class="cart-item container d-flex justify-content-between align-items-center">
+      <div class="cart-item-template visually-hidden ">
+        <a href="" class="cart-item-link w-100 d-flex  justify-content-between align-items-center" aria-current="true">
+          <div class="cart-item container d-flex flex-lg-row flex-column justify-content-between align-items-center">
             <img class="cart-item-img rounded" src="" alt="">
             <p class="cart-item-brand fs-6 fw-bold mt-auto mb-auto p-1"></p>
             <p class="cart-item-model fs-6 fw-light mt-auto mb-auto"></p>
             <p class="cart-item-price fs-6 fw-bold mt-auto mb-auto p-3"></p>
           </div>
         </a>
-        <div class="d-flex">
+        <div class="d-flex flex-lg-row flex-column ">
           <input type="number" step="1" min="1" value="1" class="cart-item-amount input-text qty text text-center" size="4">
           <button class="fs-5 fw-bold mx-2 cart-item-remove"><img src="http://localhost:8000/assets/images/delete.svg" alt=""></button>
         </div>
