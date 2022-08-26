@@ -1,7 +1,17 @@
-const productId = location.pathname.split("/")[2];
 let addingProduct = document.querySelectorAll(".adding-product");
-
 let totalPrice = 0;
+
+if (document.querySelector(".logout-btn")) {
+    document.querySelector(".logout-btn").onclick = function () {
+        fetch("http://localhost:8000/api/auth/logout")
+            .then((response) => response.json())
+            .then((data) => {
+                if (data) {
+                    location.pathname = "/auth";
+                }
+            });
+    };
+}
 
 localStorage.setItem("loader", JSON.stringify(true));
 localStorage.setItem("cartLoader", JSON.stringify(true));
@@ -12,14 +22,14 @@ if (localStorage.getItem("cart") == null) {
 
 const calcTotal = function (value) {
     totalPrice += value;
-    getTotal(totalPrice);
+    setTotal(totalPrice);
     localStorage.setItem("cartLoader", JSON.stringify(false));
 };
 
 const resetTotal = function () {
     totalPrice = 0;
 };
-const getTotal = function (totalPrice) {
+const setTotal = function (totalPrice) {
     document.querySelectorAll(".cart-total").forEach((total) => {
         total.textContent = "€" + totalPrice;
     });
@@ -121,36 +131,41 @@ const addToCart = function (productId, amount) {
     fillCart();
 };
 
-const interval = setInterval(() => {
-    addingProduct = document.querySelectorAll(".adding-product");
-    if (addingProduct.length) {
-        clearInterval(interval);
-        for (let product of addingProduct) {
-            const addBtn = product.querySelector(".add-to-cart-btn");
-            const productId = addBtn.dataset["id"];
-            addBtn.onclick = () => {
-                addToCart(
-                    productId,
-                    product.querySelector(".add-to-cart-amount").value
-                );
-                addBtn.classList.add("added");
-                document.querySelector(".cart-link").classList.add("added");
-                setTimeout(() => {
-                    addBtn.classList.remove("added");
-                    document
-                        .querySelector(".cart-link")
-                        .classList.remove("added");
-                }, 1000);
-            };
+const interval = function () {
+    setInterval(() => {
+        addingProduct = document.querySelectorAll(".adding-product");
+        if (addingProduct.length) {
+            clearInterval(interval);
+            for (let product of addingProduct) {
+                const addBtn = product.querySelector(".add-to-cart-btn");
+                const productId = addBtn.dataset["id"];
+                addBtn.onclick = () => {
+                    addToCart(
+                        productId,
+                        product.querySelector(".add-to-cart-amount").value
+                    );
+                    addBtn.classList.add("added");
+                    document.querySelector(".cart-link").classList.add("added");
+                    setTimeout(() => {
+                        addBtn.classList.remove("added");
+                        document
+                            .querySelector(".cart-link")
+                            .classList.remove("added");
+                    }, 1000);
+                };
+            }
         }
-    }
-}, 500);
+    }, 500);
+};
+interval();
 
 const loaderInterval = setInterval(() => {
     const loader = localStorage.getItem("loader");
     const cartLoader = localStorage.getItem("cartLoader");
     if (loader == "false" && cartLoader == "false") {
         clearInterval(loaderInterval);
-        document.querySelector(".loader").remove();
+        if (document.querySelector(".loader")) {
+            document.querySelector(".loader").remove();
+        }
     }
 }, 500);
