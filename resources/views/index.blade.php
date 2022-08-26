@@ -95,6 +95,19 @@ require_once "./templates/header.php";
 </div>
 
 <!-- CATEGORY -->
+<div class="categoryBrands d-flex justify-content-evenly flex-wrap ">
+    <a href="http://localhost:8000/catalogue?brand=Razer" class="mb-1">
+        <img src="http://localhost:8000/assets/images/cardRazer.svg" alt="">
+    </a>
+    <a href="http://localhost:8000/catalogue?brand=Logitech" class="mb-1">
+        <img src="http://localhost:8000/assets/images/cardLogitech.svg" alt="">
+    </a>
+    <a href="http://localhost:8000/catalogue?brand=Steelseries" class="mb-1">
+        <img src="http://localhost:8000/assets/images/cardSteel.svg" alt="">
+    </a>
+</div>
+
+
 <div class="category">
     <a href="http://localhost:8000/catalogue?type=Mouse">
         <img src="http://localhost:8000/assets/images/categorieMouses.svg" alt="">
