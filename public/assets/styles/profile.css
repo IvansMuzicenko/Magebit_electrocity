@@ -1,0 +1,26 @@
+#profile {
+    width: 90%;
+
+    background: white;
+}
+
+#cartImg,
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+}
+
+#cartText {
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.list-group-item {
+    align-items: center;
+}
+
+tr {
+    width: 50%;
+    border-radius: 10%;
+}

@@ -46,3 +46,4 @@ Button (green) - Emerald - #51CF66
 
 Main Color - Royal Blue Light - #3B5BDB
 Secondary - Majorelle blue -  #7048E8
+

@@ -2,23 +2,465 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Products;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
-{
+class DatabaseSeeder extends Seeder {
+    use WithoutModelEvents;
     /**
      * Seed the application's database.
      *
      * @return void
      */
-    public function run()
-    {
-        // \App\Models\User::factory(10)->create();
+    public function run() {
+        //Mouses ----------------------------------------
+        $mouseBrand = [
+            "Logitech",
+            "Logitech",
+            "Logitech",
+            "Logitech",
+            "Steelseries",
+            "Steelseries",
+            "Steelseries",
+            "Steelseries",
+            "DELL",
+            "DELL",
+            "Razer",
+            "Razer",
+            "Razer",
+            "Razer",
+            "Razer",
+            "Logitech",
+            "Redragon",
+            "Redragon"
+        ];
+        $mouseModel = [
+            "G203",
+            "G203",
+            "GPro",
+            "MX",
+            "Aerox 3",
+            "Prime",
+            "Prime Neo",
+            "Rival 600",
+            "545-BBDS",
+            "610M",
+            "Viper Ultimate",
+            "Orochi",
+            "Basilisk v3",
+            "Deathadder v2",
+            "Naga",
+            "M705",
+            "Octopus",
+            "M908"
+        ];
+        $mouseColor = [
+            "Colored",
+            "Black",
+            "Black",
+            "Black",
+            "White",
+            "Black",
+            "White",
+            "Black",
+            "Black",
+            "White",
+            "Colored",
+            "White",
+            "Black",
+            "Black",
+            "Black",
+            "Silver",
+            "Black",
+            "Black",
+        ];
+        $mouseConn = [
+            "USB",
+            "USB",
+            "USB",
+            "Wireless",
+            "USB",
+            "Wireless",
+            "USB",
+            "USB",
+            "USB",
+            "Wireless",
+            "Wireless",
+            "Wireless",
+            "USB",
+            "USB",
+            "USB",
+            "Wireless",
+            "USB",
+            "USB",
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        ];
+        $mousePrice = [
+            30.00,
+            35.00,
+            99.00,
+            80.00,
+            47.00,
+            93.00,
+            60.00,
+            80.00,
+            51.00,
+            83.00,
+            204.00,
+            77.95,
+            72.00,
+            64.00,
+            87.00,
+            35.00,
+            23.96,
+            32.24,
+
+        ];
+        $mouseImg1 = [
+            "https://m.media-amazon.com/images/I/61BnR2NE4PL._AC_SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_SX679_.jpg",
+            "https://images.1a.lv/display/aikido/store/b570d89cd6b4699f7c1c51b49ffe1c7f.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/9f675d9d836710e0ba74e57870510053.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/e408073abb7f88ddf4ebf9cfbc3c1c66.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/b6657e77c6d13596de09e44e9d61aea5.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/8748d8741ecf346bbbc81286d691311d.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/da625b99cdd427c63cc68cc3ca97c004.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/3fee97bba408d2ca5fc2bd8d52609770.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/338d932781c6dda7229eefeb17111c87.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/a63b94ca0efb1d62309e453839b520ca.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/026fb1934cb4b13ffecc5ad6989cf35a.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/2f335e697b0c7b5f7a61db4955735961.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/203f10b09f248b5c7177bd9c41833e89.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/4a2ed0dffebd57e40b55de6028c2d495.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/96b4284cfd128b9a7d4284a330831bc1.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/3f7c242f7b5964b2c82df2f4930f1c1a.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/60ee1fa024fce10b5a24a7e07f2affd2.jpg?h=742&w=816",
+        ];
+        $mouseImg2 = [
+            "https://images.1a.lv/display/aikido/store/d0c195dba74d40b9ca74217ef16b1dae.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/d47ad6e1a090b6af0eaff11af8f044a0.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/4c986a08fb70e2a911d669fdd2ade3d6.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/352f1d7fa997c7c2bc79f2d3a6030ea4.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/715639ae54fb2079df2fb12606b51004.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/07895389ce5dd2d9795b08ab6c4db0e7.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/d2fcb0e55841249ae3d14fe4e3951e42.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/86265d2408add57d8991ff8d56b3ce72.jpg?h=742&w=816",
+            "https://d3d14bvuzxlv37.cloudfront.net/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/D/-/D-N-545-BBDS_mouse-alienware-aw320m-black-gallery-1.webp",
+            "https://images.1a.lv/display/aikido/store/b1aa5455e788d77f0e415e1ca9925d7a.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/01da92b490cd90de77e1f2167cbd4af5.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/28d39f7c2c4b0de2395b51ccce557f79.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/7f26a07841f9f4d44f6100c9ea8109a4.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/c1bdef26ed4acc7acd3d95d060941575.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/343b773bea59eebb47ce1d7e36d699fe.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/9afa4cbd429d26adcf2ca1f19f324076.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/c8c0c891c4167dc99d601d1ffdd31b9b.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/a08d52b6b72875721153a86bcb40ff3b.jpg?h=742&w=816",
+        ];
+        $mouseImg3 = [
+            "https://images.1a.lv/display/aikido/store/b9c609996e2660635b608e2c2032850c.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/8e6fd6f7325159c32f089cd0c1fb201a.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/b862f765a66aaec1e2661514124db5cd.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/949a3c638a7f3229b1a06dbab58bcfdc.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/94ddc1e49b39198bc4dd9a10c60f57d0.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/5c9b2eb57d0bb49c10195e92d9baa498.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/7d5b8dccee29ea272e896eea4f64e795.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/da625b99cdd427c63cc68cc3ca97c004.png?h=742&w=816",
+            "https://d3d14bvuzxlv37.cloudfront.net/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/D/-/D-N-545-BBDS_mouse-alienware-aw320m-black-gallery-3.webp",
+            "https://images.1a.lv/display/aikido/store/6d6eb337cfa2f289796ba2b25efea57b.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/aa93592b9fe7416a8968d40540c6bee9.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/413ea26d4f4bfeb3794ca2bcd2aba8c6.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/5d995836ec4d195606dd1db63962b7b4.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/3285940eb569b00751559e7612ff674b.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/5077c1cab046c110ea01109c5e0d72a6.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/b82a99c229839fcaaa5504e609542a6f.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/d2be4b5cb55df7134d7dde58faea6e88.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/0c23b8c9b96ec2592d7d91a35741bb5a.jpg?h=742&w=816",
+        ];
+
+        //Keyboards ----------------------------------------
+        $keyboardBrand = [
+            "Razer",
+            "Razer",
+            "Logitech",
+            "Logitech",
+            "Logitech",
+            "Redragon",
+            "Steelseries",
+            "Steelseries",
+            "Razer",
+            "Razer",
+            "Razer",
+            "Logitech",
+            "Logitech",
+            "Logitech",
+            "DELL",
+        ];
+        $keyboardModel = [
+            "BlackWidow",
+            "Huntsman",
+            "MK235",
+            "K380",
+            "G413",
+            "K599",
+            "Apex 3",
+            "Apex 7",
+            "BlackWidow V3",
+            "BlackWidow V3",
+            "Cynosa",
+            "Ergo",
+            "G213",
+            "POP",
+            "KB813",
+        ];
+        $keyboardColor = [
+            "Black",
+            "White",
+            "Black",
+            "Black",
+            "Black",
+            "Black",
+            "Black",
+            "Black",
+            "Colored",
+            "Black",
+            "Black",
+            "Black",
+            "Black",
+            "Colored",
+            "Black",
+        ];
+        $keyboardConn = [
+            "USB",
+            "USB",
+            "Wireless",
+            "Wireless",
+            "USB",
+            "Wireless",
+            "USB",
+            "USB",
+            "USB",
+            "USB",
+            "USB",
+            "USB",
+            "USB",
+            "Wireless",
+            "USB",
+        ];
+        $keyboardPrice = [
+            150.00,
+            100.00,
+            50.00,
+            47.00,
+            68.00,
+            55.00,
+            46.29,
+            124.35,
+            183.29,
+            120.50,
+            99.65,
+            133.00,
+            52.49,
+            84.00,
+            59.90,
+        ];
+
+        $keyboardImg1 = [
+            "https://images.1a.lv/display/aikido/store/5d93b456678038a0871a3304fadcb8d7.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/1ccac4e6e778f0e78d38f0d4944bd511.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/26f05742d4835d2149a2aad4b2c58a10.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/fad89d41b0ce74ea2fe5d09a8bee8074.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/6faa5776ec240376a323c8a509e8c720.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/9f1e3520417295ba675741f2803daf8d.jpeg?h=742&w=816",
+            "https://cdn.tet.lv/tetveikals-prd-images/product_popup_image/products/steelseries-64795-5e5e400374fc5.png",
+            "https://cdn.tet.lv/tetveikals-prd-images/product_popup_image/products/steelseries-apex-7-tkl-1-5dfb6fefe84da.png",
+            "https://ksd-images.lt/display/aikido/cache/c7dd9975cea21143270f0de0ca2101ae.jpeg",
+            "https://24.lv/images/detailed/594/Razer-BlackWidow-V3-Pro.jpg",
+            "https://images.1a.lv/display/aikido/store/0134a93083716037b2807c7b8a988deb.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/3e95a7b38bbfcf854ddcdfaf185bccca.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/a462c18eb0ccaf792868293c9fb96b9c.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/7307867148bd7c6702b8816dd2632930.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/6b28ae0670e4d1ff241344c6c1d8d4c2.jpeg?h=742&w=816",
+        ];
+        $keyboardImg2 = [
+            "https://images.1a.lv/display/aikido/store/babb7ecb95103cd3a083022e6b483567.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/b2e4fe94c2426ecfa6636fab2c1dab2f.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/66b1bcdd48b5a5c96721a021394c1d50.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/3ae17808a0fbbdf6815c91c1c7bc8462.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/d6935ba5655dce7770b2c08e888aa98b.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/8a23149e4d4902c02f21d10c8b6369d7.jpeg?h=742&w=816",
+            "https://24.lv/images/detailed/515/81L8fk7SGQL._AC_SL1500_.jpg",
+            "https://ksd-images.lt/display/aikido/store/7a84e12d2358080bbb175d4d7b129532.jpg",
+            "https://ksd-images.lt/display/aikido/cache/f838031756c24ec591b635a04612ac7b.jpeg",
+            "https://ksd-images.lt/display/aikido/store/ab1addff4451b6cec8df801d9020bf55.jpg",
+            "https://images.1a.lv/display/aikido/store/f61817723e1e9a8fdbe1d37b84acc630.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/21cd83bfe60d2447400e8d3e90e7bf79.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/92c23f87a9ec7c2963253b1033e8d22a.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/57ef01f2d099844783755e8a6d4f175a.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/fd73ba3901d1c525e150f5fafee5891d.jpeg?h=742&w=816",
+        ];
+        $keyboardImg3 = [
+            "https://images.1a.lv/display/aikido/store/8a9a8061a870e7f7d17198eca8964942.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/9c0bf0743e15115b0863b4a70806e758.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/5a903f602803ab1c3e8d2abac38b90d9.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/dbeb1c32b41c9802b5eca44a6aca41bb.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/e2f4858b77988d8f2e84c6c26fff678d.jpg?h=742&w=816",
+            "https://http2.mlstatic.com/D_NQ_NP_852820-MLA49004181665_022022-O.webp",
+            "https://cdn.tet.lv/tetveikals-prd-images/product_popup_image/products/steelseries-64795-01-5e5e40038344a.png",
+            "https://ksd-images.lt/display/aikido/store/24004d904068d2cd7f3dc243816c1ae4.jpg",
+            "https://ksd-images.lt/display/aikido/cache/92af429f22020c5c83c2e0fc669cd794.jpeg",
+            "https://assets3.razerzone.com/F_-o1S79s9wPRol2j7pGQu1xXvI=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh22%2Fhee%2F9086247993374%2Frazer-blackwidow-v3-pro-1500x1000_0.jpg",
+            "https://images.1a.lv/display/aikido/store/830d89fb6c86688e161e1954e17f993c.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/48f56364dfd1d61997d6b3fc3285dece.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/0840867e47678faa912607e3715dd572.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/5c5c98301513afb588d0d7f21fe42030.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/4133676535f971488fd7321544283afe.jpeg?h=742&w=816",
+        ];
+
+        //Headsets ----------------------------------------
+        $headsetBrand = [
+            "Logitech",
+            "Corsair",
+            "Razer",
+            "Razer",
+            "Logitech",
+            "Steelseries",
+            "Steelseries",
+            "Steelseries",
+            "Sennheiser",
+            "JBL",
+            "Beyerdynamic",
+        ];
+        $headsetModel = [
+            "G733",
+            "HS70 PRO",
+            "Kraken",
+            "Kraken",
+            "G435",
+            "Artis 9",
+            "Nova Pro",
+            "Artis 3",
+            "M3AEBTXL",
+            "LIVE",
+            "DT 880",
+        ];
+        $headsetColor = [
+            "White",
+            "Black",
+            "Colored",
+            "Black",
+            "Black",
+            "Black",
+            "Black",
+            "Black",
+            "Black",
+            "Colored",
+            "Colored",
+        ];
+        $headsetConn = [
+            "Wireless",
+            "Wireless",
+            "3.5 mm",
+            "3.5 mm",
+            "Wireless",
+            "Wireless",
+            "Wireless",
+            "3.5 mm",
+            "Wireless",
+            "Wireless",
+            "3.5 mm",
+        ];
+        $headsetPrice = [
+            54.00,
+            60.00,
+            59.99,
+            59.99,
+            79.99,
+            188.99,
+            420.42,
+            63.70,
+            318.00,
+            140.00,
+            173.66,
+        ];
+        $headsetImg1 = [
+            "https://images.1a.lv/display/aikido/store/8c8c08771287f36f08f014344df0adb4.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/8b74d6e418e2bfc1e0656e1c2cce4d7d.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/77c2b9f153717cdd9903f57408af8357.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/f335fde4916ca25a8b127e09e751188d.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/8110bdf88a97165e5504aaae26f39a3d.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/982d33c49ab360070cf109ff9810aa99.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/31e638b001377380e4ad9f66d8f66f70.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/bc4a2043fa310768c78dcc4d2bc35ddc.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/a2140d73b8f1a73ffc623c153341bcd6.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/81d731128a6d6fce6fbdfd134ebe276e.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/8b4d8419cdcb6cb9474d74cc653b6e32.jpg?h=742&w=816",
+        ];
+        $headsetImg2 = [
+            "https://images.1a.lv/display/aikido/cache/70a185f5ea17f711c8cdf8e2e8944e7d.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/0d6a1d0947c9a670d90cb1236a11e250.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/57101c5350e31235f3da09eead4bba64.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/d6469aec7f5aad5d33354ee6d744bf8d.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/4cbfd63d780aa0eb8fd178ff0a0757b2.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/0a975a50ca0d87832282bbe37bfbc181.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/1491684b49eb1db144cf801f20476f31.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/21e80cad8346ee8b1ae4759214ae044b.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/1ce702f40f24310a8324bd2b96f4a258.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/c7f3fbfee50725fe87964469a4a59790.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/092f489b3e762083a5c081d628e378f2.jpg?h=742&w=816",
+        ];
+        $headsetImg3 = [
+            "https://4frag.ru/image/cache/data/Naushniki/Logitech/logitech-g733-white-2-600x600.jpg",
+            "https://images.1a.lv/display/aikido/store/47a0c345264bfec150710d6f7c62c192.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/399b07e5e8bacadde7be58da801c3963.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/3836d31de00ad7a56fefa1dd53266b39.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/1197773e08d527fbfa135a46e6f36c16.png?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/1352bd53ae120f8e5852a202105d7345.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/91c8e19599afee0d6183b9fa91079485.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/0581df1d0d11e0195b2914e5044c681e.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/store/c77487459b7bbe14d036f978b5dee3a0.jpg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/3416e50a2b63225179e58c9868bce171.jpeg?h=742&w=816",
+            "https://images.1a.lv/display/aikido/cache/4c2d2bbea2aee02e2ba7025fcf99ac10.png?h=742&w=816",
+        ];
+        for ($i = 0; $i < count($mouseBrand); $i++) {
+            DB::table('products')->insert([
+                "type" => "Mouse",
+                "brand" => $mouseBrand[$i],
+                "model" => $mouseModel[$i],
+                "color" => $mouseColor[$i],
+                "connection" => $mouseConn[$i],
+                "price" => $mousePrice[$i],
+                "img1" => $mouseImg1[$i],
+                "img2" => $mouseImg2[$i],
+                "img3" => $mouseImg3[$i],
+            ]);
+        }
+        for ($i = 0; $i < count($keyboardBrand); $i++) {
+            DB::table('products')->insert([
+                "type" => "Keyboard",
+                "brand" => $keyboardBrand[$i],
+                "model" => $keyboardModel[$i],
+                "color" => $keyboardColor[$i],
+                "connection" => $keyboardConn[$i],
+                "price" => $keyboardPrice[$i],
+                "img1" => $keyboardImg1[$i],
+                "img2" => $keyboardImg2[$i],
+                "img3" => $keyboardImg3[$i],
+            ]);
+        }
+        for ($i = 0; $i < count($headsetBrand); $i++) {
+            DB::table('products')->insert([
+                "type" => "Headset",
+                "brand" => $headsetBrand[$i],
+                "model" => $headsetModel[$i],
+                "color" => $headsetColor[$i],
+                "connection" => $headsetConn[$i],
+                "price" => $headsetPrice[$i],
+                "img1" => $headsetImg1[$i],
+                "img2" => $headsetImg2[$i],
+                "img3" => $headsetImg3[$i],
+            ]);
+        }
     }
 }
