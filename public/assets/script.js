@@ -3,6 +3,9 @@ let addingProduct = document.querySelectorAll(".adding-product");
 
 let totalPrice = 0;
 
+localStorage.setItem("loader", JSON.stringify(true));
+localStorage.setItem("cartLoader", JSON.stringify(true));
+
 if (localStorage.getItem("cart") == null) {
     localStorage.setItem("cart", JSON.stringify({}));
 }
@@ -10,6 +13,7 @@ if (localStorage.getItem("cart") == null) {
 const calcTotal = function (value) {
     totalPrice += value;
     getTotal(totalPrice);
+    localStorage.setItem("cartLoader", JSON.stringify(false));
 };
 
 const resetTotal = function () {
@@ -45,11 +49,11 @@ const fillCart = function () {
     if (cartPageField) {
         cartPageField.innerHTML = cartItemTemplate.outerHTML;
     }
-
     //fill cart after cart change
 
     for (let productId of Object.keys(cart)) {
         if (!productId) {
+            localStorage.setItem("cartLoader", JSON.stringify(false));
             return;
         }
         fetch("http://localhost:8000/api/getProductById/" + productId)
@@ -97,6 +101,7 @@ const fillCart = function () {
                 calcTotal(cart[productId] * dbItem["price"]);
             });
     }
+    localStorage.setItem("cartLoader", JSON.stringify(false));
 };
 fillCart();
 
@@ -123,11 +128,25 @@ const interval = setInterval(() => {
         for (let product of addingProduct) {
             const addBtn = product.querySelector(".add-to-cart-btn");
             const productId = addBtn.dataset["id"];
-            addBtn.onclick = () =>
+            addBtn.onclick = () => {
                 addToCart(
                     productId,
                     product.querySelector(".add-to-cart-amount").value
                 );
+                addBtn.classList.add("added");
+                setTimeout(() => {
+                    addBtn.classList.remove("added");
+                }, 1000);
+            };
         }
+    }
+}, 500);
+
+const loaderInterval = setInterval(() => {
+    const loader = localStorage.getItem("loader");
+    const cartLoader = localStorage.getItem("cartLoader");
+    if (loader == "false" && cartLoader == "false") {
+        clearInterval(loaderInterval);
+        document.querySelector(".loader").remove();
     }
 }, 500);
