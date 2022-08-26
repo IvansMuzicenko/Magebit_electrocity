@@ -1,5 +1,9 @@
 <?php
-require_once "./templates/header.php"
+require_once "./templates/header.php";
+if (isset($_SESSION["user"]) || isset($_SESSION["user"]["id"])) {
+  header("Location: http://localhost:8000/");
+  die();
+}
 ?>
 
 <!--SIGN IN-->
@@ -98,6 +102,18 @@ require_once "./templates/header.php"
     const confirmPassValue = document.querySelector(
       "[name='reg_conf_pass']"
     ).value;
+    if (!firstnameValue || !lastnameValue || !addressValue || !emailValue || !passValue || !confirmPassValue) {
+      return alert("Please fill all fields")
+    }
+    if (!emailValue.includes("@") || !emailValue.includes(".")) {
+      return alert("Provide a correct email")
+    }
+    if (passValue.length < 6) {
+      return alert("Password must contain at least 6 symbols")
+    }
+    if (passValue != confirmPassValue) {
+      return alert("Password do not match")
+    }
 
     const data = new FormData();
     data.set("firstname", firstnameValue);
