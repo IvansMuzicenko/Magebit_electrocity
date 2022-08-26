@@ -81,7 +81,17 @@ const fillCart = function () {
                     deleteFromCart(productId);
 
                 if (cartPageField) {
-                    cartPageField.append(newItem.cloneNode(true));
+                    let cloneItem = newItem.cloneNode(true);
+                    cloneItem.querySelector(".cart-item-amount").onchange =
+                        () =>
+                            changeProductAmount(
+                                productId,
+                                cloneItem.querySelector(".cart-item-amount")
+                                    .value
+                            );
+                    cloneItem.querySelector(".cart-item-remove").onclick = () =>
+                        deleteFromCart(productId);
+                    cartPageField.append(cloneItem);
                 }
                 cartField.append(newItem);
                 calcTotal(cart[productId] * dbItem["price"]);
