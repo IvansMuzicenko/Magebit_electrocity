@@ -2,7 +2,7 @@
 require_once "./templates/header.php"
 ?>
 
-<div id="productCard" class="card d-flex adding-product">
+<div id="productCard" class="card d-flex adding-product mt-3 mb-3">
   <div id="productCarousel" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
