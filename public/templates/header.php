@@ -21,6 +21,11 @@
     </div>
     <div class="collapse navbar-collapse me-3" id="navbarNavDropdown">
       <ul class="navbar-nav text-center d-flex gap-3 justify-content-center align-items-center">
+        <?php if (isset($_SESSION["user"]) && isset($_SESSION["user"]['id']) && $_SESSION["user"]["id"] == 1) :; ?>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8000/product-add">Add product</a>
+          </li>
+        <?php endif; ?>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost:8000/">Home</a>
         </li>

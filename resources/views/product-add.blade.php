@@ -1,5 +1,9 @@
 <?php
 require_once "./templates/header.php";
+if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"]) || $_SESSION["user"]["id"] != 1) {
+  header("Location: http://localhost:8000/");
+  die();
+}
 ?>
 
 <style>
@@ -46,16 +50,6 @@ require_once "./templates/header.php";
 
 
 <script>
-  const userId =
-    <?php
-    if (isset($_SESSION["user"]) && isset($_SESSION["user"]["id"])) {
-      echo $_SESSION["user"]["id"];
-    } else echo 0
-    ?>;
-  if (userId != 1) {
-    location.pathname = "/auth";
-  }
-
   document.querySelector("form").onsubmit = function(event) {
     event.preventDefault();
 

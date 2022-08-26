@@ -1,5 +1,9 @@
 <?php
-require_once "./templates/header.php"
+require_once "./templates/header.php";
+if (isset($_SESSION["user"]) || isset($_SESSION["user"]["id"])) {
+  header("Location: http://localhost:8000/");
+  die();
+}
 ?>
 
 <!--SIGN IN-->

@@ -1,5 +1,9 @@
 <?php
-require_once "./templates/header.php"
+require_once "./templates/header.php";
+if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"])) {
+    header("Location: http://localhost:8000/auth");
+    die();
+}
 ?>
 
 <div class="cart container m-auto bg-secondary p-3 align-items-center rounded">
