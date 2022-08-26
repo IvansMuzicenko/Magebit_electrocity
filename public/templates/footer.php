@@ -9,7 +9,7 @@
             <p style="font-size: 13px;"><span class="fw-bold">Addres:</span><br>911 Magebit street, Riga, Latvia</p>
         </div>
         <div class="story text-end" style="width:40%">
-            <p style="font-size: 13px;">We are new company developed by 3 stupid juniors, that have only few hours to develope application that shouldwork</p>
+            <p style="font-size: 13px;">We are new company developed by 3 stupid juniors, <br>that have only few hours to develope application <br>that shouldwork</p>
         </div>
     </div>
 
