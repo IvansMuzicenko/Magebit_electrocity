@@ -18,6 +18,9 @@ require_once "./templates/header.php"
   </div>
 </div>
 <script>
+  window.onload = () => {
+    localStorage.setItem("loader", JSON.stringify(false));
+  }
   const area = document.querySelector(".game__area");
   const results = document.querySelector(".game__results");
   const turn = document.querySelector(".game__turn");
