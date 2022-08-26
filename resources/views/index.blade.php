@@ -13,7 +13,7 @@ require_once "./templates/header.php";
     <div class="carousel-inner">
         <div class="carousel-item active">
             <a href="http://localhost:8000/catalogue">
-                <img src="http://localhost:8000/assets/images/banner1.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+                <img src="http://localhost:8000/assets/images/banner1.svg" class="" style="width:100%; height:auto" alt="...">
 
                 <div id="textBg" class="carousel-caption d-none d-md-block">
                     <p class="h1 fw-light">Welcome to ELECTROCITY</p>
@@ -23,7 +23,7 @@ require_once "./templates/header.php";
         </div>
         <div class="carousel-item">
             <a href="http://localhost:8000/catalogue?brand=Logitech">
-                <img src="http://localhost:8000/assets/images/banner2.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+                <img src="http://localhost:8000/assets/images/banner2.svg" class="" style="width:100%; height:auto" alt="...">
 
                 <div class="carousel-caption d-none d-md-block">
                     <p class="h1 fw-light">logitech x electroCity</p>
@@ -33,7 +33,7 @@ require_once "./templates/header.php";
         </div>
         <div class="carousel-item">
             <a href="http://localhost:8000/catalogue?brand=Razer">
-                <img src="http://localhost:8000/assets/images/banner3.svg" class="img-fluid" style="width:100%; height:auto" alt="...">
+                <img src="http://localhost:8000/assets/images/banner3.svg" class="" style="width:100%; height:auto" alt="...">
 
                 <div class="carousel-caption d-none d-md-block">
                     <p class="h1 fw-light">razer x electroCity</p>
@@ -54,7 +54,7 @@ require_once "./templates/header.php";
 </div>
 
 
-<div id="carousel" class="carousel slide" data-bs-interval="1" data-bs-ride="carousel">
+<div id="carousel" class="carousel slide"  data-bs-ride="carousel" data-bs-interval="false" data-bs-pause="hover">
     <div class="carousel-inner">
         <div class="carousel-item sanja active">
             <div class="carousel-item-wrapper d-flex">
@@ -83,6 +83,7 @@ require_once "./templates/header.php";
     <a href="http://localhost:8000/catalogue" type="submit" class="btn btn-primary btn-lg mb-5 catalogue-btn">Catalogue</a>
 </div>
 
+<!-- CATEGORY -->
 <div class="category">
     <a href="http://localhost:8000/catalogue?type=Mouse">
         <img src="http://localhost:8000/assets/images/categorieMouses.svg" alt="">
@@ -116,12 +117,6 @@ require_once "./templates/header.php";
                 appendTarget = document.querySelectorAll('.catalogue-index')
             }
 
-
-
-
-
-
-
             for (let item of data.data) {
                 i++;
                 const newItem = document.createElement("a");
@@ -132,8 +127,8 @@ require_once "./templates/header.php";
                 newItem.querySelector("img").src = item.img1;
                 newItem.querySelector("img").style =
                     "max-width: 20rem; width: 100%; height: 10rem; object-fit:contain;";
-                newItem.querySelector(".card-text").textContent =
-                    item.brand + " " + item.model + " " + "€" + item.price;
+                newItem.querySelector(".card-text").innerHTML =
+                    item.brand + " " + item.model + "<br>" + "€" + item.price;
 
 
                 let n = 0;
