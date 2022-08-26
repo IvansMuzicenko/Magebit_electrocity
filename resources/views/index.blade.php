@@ -148,9 +148,11 @@ require_once "./templates/header.php";
                 appendTarget[n].append(newItem);
                 if (i > 15) {
                     catalogueItemTemplate.remove()
+                    localStorage.setItem("loader", JSON.stringify(false));
                     return;
                 }
             }
+
         });
 </script>
 

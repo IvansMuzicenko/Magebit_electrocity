@@ -50,6 +50,9 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"]) || $_SESSION["u
 
 
 <script>
+  window.onload = () => {
+    localStorage.setItem("loader", JSON.stringify(false));
+  }
   document.querySelector("form").onsubmit = function(event) {
     event.preventDefault();
 

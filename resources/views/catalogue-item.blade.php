@@ -82,6 +82,7 @@ require_once "./templates/header.php"
           document.querySelector(".description").innerHTML = "New product in e-store"
 
       }
+      localStorage.setItem("loader", JSON.stringify(false))
     });
 </script>
 

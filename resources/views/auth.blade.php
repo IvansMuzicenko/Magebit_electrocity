@@ -68,6 +68,9 @@ if (isset($_SESSION["user"]) || isset($_SESSION["user"]["id"])) {
 
   const signIn = document.querySelector(".signIn");
   const signUp = document.querySelector(".signUp");
+  window.onload = () => {
+    localStorage.setItem("loader", JSON.stringify(false));
+  }
 
   signUpLink.onclick = function(e) {
     e.preventDefault();

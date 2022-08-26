@@ -140,6 +140,7 @@ require_once "./templates/header.php"
 
 			catalogue.append(newItem);
 		}
+		localStorage.setItem("loader", JSON.stringify(false))
 
 	}
 	const getAll = function() {

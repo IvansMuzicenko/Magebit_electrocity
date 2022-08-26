@@ -77,6 +77,7 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"])) {
       historyField.append(newItem);
     }
     itemTemplate.remove();
+    localStorage.setItem("loader", JSON.stringify(false))
   })
 </script>
 

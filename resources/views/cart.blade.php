@@ -18,6 +18,9 @@ if (!isset($_SESSION["user"]) || !isset($_SESSION["user"]["id"])) {
 </div>
 
 <script>
+    window.onload = () => {
+        localStorage.setItem("loader", JSON.stringify(false));
+    }
     document.querySelector(".purchase").onclick = function() {
         const cart = JSON.parse(localStorage.getItem("cart"));
 
