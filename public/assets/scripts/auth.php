@@ -8,18 +8,21 @@
         localStorage.setItem("loader", JSON.stringify(false));
     }
 
+    // Switch auth form to sign-up
     signUpLink.onclick = function(e) {
         e.preventDefault();
         signIn.classList.add("visually-hidden");
         signUp.classList.remove("visually-hidden");
     };
 
+    // Switch auth form to sign-in
     signInLink.onclick = function(e) {
         e.preventDefault();
         signIn.classList.remove("visually-hidden");
         signUp.classList.add("visually-hidden");
     };
 
+    // Sign-up validated data sending to api
     signUp.onsubmit = function(event) {
         event.preventDefault();
 
@@ -71,6 +74,8 @@
         })
 
     }
+
+    // Sign-in validated data sending to api
     signIn.onsubmit = function(event) {
         event.preventDefault();
         const emailValue = document.querySelector(

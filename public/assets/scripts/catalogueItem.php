@@ -2,6 +2,7 @@
     <?php require_once "./assets/script.js" ?>
     const productId = location.pathname.split("/")[2];
 
+    // Displaying product data
     fetch("http://localhost:8000/api/getProductById/" + productId)
         .then(async response =>
             await response.json())

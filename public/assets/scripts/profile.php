@@ -1,4 +1,5 @@
 <script>
+  // Displaying user's orders history
   fetch("http://localhost:8000/api/orders/getOrdersById/" + <?php echo $_SESSION["user"]["id"] ?>).then(response => response.json()).then(data => {
     const itemTemplate = document.querySelector(".history-item-template");
     const historyField = document.querySelector(".history");

@@ -1,5 +1,7 @@
 <script>
     <?php require_once "./assets/script.js" ?>
+
+    // Getting all existing filter options and display them
     fetch("http://localhost:8000/api/getAllProducts")
         .then(async (response) => await response.json())
         .then((data) => {
@@ -66,6 +68,8 @@
 
         });
 
+
+    // Displaying items from database to catalogue list 
     const displayItems = function(items) {
         const catalogue = document.querySelector(".catalogue");
         const catalogueItemTemplate = document.querySelector(
@@ -111,6 +115,7 @@
 
     }
 
+    // Getting and filtering products from database and send them to display function
     const filterFunction = function() {
         let data = new FormData();
         data.set("type", document.querySelector(".filter_type").value);
@@ -126,9 +131,9 @@
             displayItems(data.data);
         })
     }
-
     filterFunction();
 
+    // Refresh products list of filter clearing
     document.querySelector(".clear_filter").onclick = function(event) {
         event.preventDefault();
         document.querySelector(".filter_type").value = "*";
@@ -139,6 +144,7 @@
         filterFunction();
     }
 
+    // Getting and filtering products list on filters change
     document.querySelectorAll(".filter_select").forEach(select => {
         select.onchange = filterFunction;
     })

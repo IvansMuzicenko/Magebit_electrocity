@@ -20,21 +20,26 @@ if (localStorage.getItem("cart") == null) {
     localStorage.setItem("cart", JSON.stringify({}));
 }
 
+// Total cart price calculations
 const calcTotal = function (value) {
     totalPrice += value;
     setTotal(totalPrice);
     localStorage.setItem("cartLoader", JSON.stringify(false));
 };
 
+// Total cart price reset
 const resetTotal = function () {
     totalPrice = 0;
 };
+
+//Total cart price display
 const setTotal = function (totalPrice) {
     document.querySelectorAll(".cart-total").forEach((total) => {
         total.textContent = "€" + totalPrice;
     });
 };
 
+// Item delete from cart and refresh cart
 const deleteFromCart = function (productId) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     delete cart[productId];
@@ -42,6 +47,8 @@ const deleteFromCart = function (productId) {
     resetTotal();
     fillCart();
 };
+
+// Item amount change in cart and refresh cart
 const changeProductAmount = function (productId, newAmount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     cart[productId] = newAmount;
@@ -49,6 +56,8 @@ const changeProductAmount = function (productId, newAmount) {
     resetTotal();
     fillCart();
 };
+
+// Display cart items
 const fillCart = function () {
     let cart = JSON.parse(localStorage.getItem("cart"));
     const cartField = document.querySelector(".small-cart-list");
@@ -59,7 +68,6 @@ const fillCart = function () {
     if (cartPageField) {
         cartPageField.innerHTML = cartItemTemplate.outerHTML;
     }
-    //fill cart after cart change
 
     for (let productId of Object.keys(cart)) {
         if (!productId) {
@@ -121,6 +129,7 @@ const fillCart = function () {
 };
 fillCart();
 
+// Item add to cart and refresh cart
 const addToCart = function (productId, amount) {
     let cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -135,6 +144,7 @@ const addToCart = function (productId, amount) {
     fillCart();
 };
 
+// Checking for loader disable
 const loaderInterval = setInterval(() => {
     const loader = localStorage.getItem("loader");
     const cartLoader = localStorage.getItem("cartLoader");

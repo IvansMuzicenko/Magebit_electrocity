@@ -2,6 +2,8 @@
     window.onload = () => {
         localStorage.setItem("loader", JSON.stringify(false));
     }
+
+    // Order sending to database
     document.querySelector(".purchase").onclick = function() {
         const cart = JSON.parse(localStorage.getItem("cart"));
         for (let [productId, amount] of Object.entries(cart)) {

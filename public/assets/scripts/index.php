@@ -1,4 +1,5 @@
 <script>
+    // Displaying products to corresponding block
     fetch("http://localhost:8000/api/getAllProducts")
         .then((response) => response.json())
         .then((data) => {

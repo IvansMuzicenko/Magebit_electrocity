@@ -3,6 +3,7 @@
         localStorage.setItem("loader", JSON.stringify(false));
     }
 
+    // Image select method switch
     document.querySelector(".method-select").onchange = function() {
         const urlChecked = document.querySelector("#url-add").checked;
         const fileChecked = document.querySelector("#file-add").checked;
@@ -22,6 +23,7 @@
 
     }
 
+    // Sending new product validated data to api
     document.querySelector("form").onsubmit = function(event) {
         event.preventDefault();
 
