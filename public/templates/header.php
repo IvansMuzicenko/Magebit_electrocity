@@ -69,7 +69,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
-    <div class="offcanvas-body small-cart-items">
+    <div class="offcanvas-body small-cart-list">
       <div class="cart-item-template visually-hidden ">
         <a href="" class="cart-item-link w-100 d-flex  justify-content-between align-items-center" aria-current="true">
           <div class="cart-item container d-flex flex-lg-row flex-column justify-content-between align-items-center">
